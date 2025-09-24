@@ -6,8 +6,10 @@ import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import com.example.testapplication.R
+import com.example.testapplication.canvas.CoordinateActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
@@ -61,6 +63,11 @@ class MyGoogleMapFragment : Fragment(), OnMapReadyCallback {
             } else {
                 bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
             }
+        }
+
+        val imgNext = view.findViewById<ImageView>(R.id.imgNext)
+        imgNext.setOnClickListener {
+            startActivity(CoordinateActivity.startActivity(requireActivity()))
         }
     }
 

@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".canvas.CoordinateActivity"/>
+
+        <activity android:name=".MainActivity"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAsIVtswkELFXpUs52b6AwTrtkdh2l0OPk"/>
