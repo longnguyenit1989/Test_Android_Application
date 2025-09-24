@@ -19,7 +19,7 @@ class MyGoogleMapFragment : Fragment(), OnMapReadyCallback {
     private var supportMapFragment = SupportMapFragment.newInstance()
 
     override fun onMapReady(p0: GoogleMap) {
-        googleMapHelper = GoogleMapHelper(p0)
+        googleMapHelper = GoogleMapHelper(requireActivity(),p0)
         Handler(Looper.getMainLooper()).postDelayed({
             googleMapHelper?.focus(listLocationDummy)
         }, 500)
