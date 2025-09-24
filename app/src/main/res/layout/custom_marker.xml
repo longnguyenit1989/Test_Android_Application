@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_marker_bubble"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:paddingTop="4dp">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="コンビニ"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtPromo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="最大10%OFF"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="10sp" />
+</LinearLayout>

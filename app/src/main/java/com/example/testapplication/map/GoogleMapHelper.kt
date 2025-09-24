@@ -3,6 +3,7 @@ package com.example.testapplication.map
 import android.content.Context
 import com.example.testapplication.R
 import com.example.testapplication.utils.Bitmap
+import com.example.testapplication.utils.Bitmap.createCustomMarker
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.model.LatLng
@@ -17,9 +18,18 @@ class GoogleMapHelper(val context: Context, val map: GoogleMap): GoogleMap.OnMar
 
         locations.forEach { location ->
             builder.include(location)
+
+            val title = "コンビニ"
+            val promo = "最大10%OFF"
+
+            val icon = createCustomMarker(context, title, promo)
             val markerOptions = MarkerOptions()
                 .position(location)
-                .icon(Bitmap.getBitmapDescriptor(context,R.drawable.flag, 32))
+                .icon(icon)
+
+//            val markerOptions = MarkerOptions()
+//                .position(location)
+//                .icon(Bitmap.getBitmapDescriptor(context,R.drawable.flag, 32))
 
 //            map.addMarker(MarkerOptions().position(location))
             map.addMarker(markerOptions)

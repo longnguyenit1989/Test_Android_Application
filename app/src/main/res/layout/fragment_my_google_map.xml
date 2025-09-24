@@ -45,7 +45,6 @@
 
     </LinearLayout>
 
-    <!-- Bottom sheet -->
     <LinearLayout
         android:id="@+id/bottomSheet"
         android:layout_width="match_parent"
@@ -55,7 +54,6 @@
         app:behavior_peekHeight="60dp"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
-        <!-- Drag handle -->
         <RelativeLayout
             android:id="@+id/dragHandle"
             android:layout_width="match_parent"
@@ -69,7 +67,6 @@
 
         </RelativeLayout>
 
-        <!-- Nội dung list -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvList"
             android:layout_width="match_parent"
