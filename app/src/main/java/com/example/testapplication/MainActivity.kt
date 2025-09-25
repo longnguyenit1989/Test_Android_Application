@@ -5,6 +5,7 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.util.Property
 import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AccelerateInterpolator
@@ -51,25 +52,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun showButtons() {
-        val anim1 = ObjectAnimator.ofFloat(binding.btn1, View.TRANSLATION_Y, -distance).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
-
-        val anim2 = ObjectAnimator.ofFloat(binding.btn2, View.TRANSLATION_X, distance).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
-
-        val anim3 = ObjectAnimator.ofFloat(binding.btn3, View.TRANSLATION_Y, distance).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
-
-        val anim4 = ObjectAnimator.ofFloat(binding.btn4, View.TRANSLATION_X, -distance).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
+        val anim1 = getObjectAnimatorShow(binding.btn1, View.TRANSLATION_Y, -distance)
+        val anim2 = getObjectAnimatorShow(binding.btn2, View.TRANSLATION_X, distance)
+        val anim3 = getObjectAnimatorShow(binding.btn3, View.TRANSLATION_Y, distance)
+        val anim4 = getObjectAnimatorShow(binding.btn4, View.TRANSLATION_X, -distance)
 
         AnimatorSet().apply {
             playTogether(anim1, anim2, anim3, anim4)
@@ -85,25 +71,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun hideButtons() {
-        val anim1 = ObjectAnimator.ofFloat(binding.btn1, View.TRANSLATION_Y, 0f).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
-
-        val anim2 = ObjectAnimator.ofFloat(binding.btn2, View.TRANSLATION_X, 0f).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
-
-        val anim3 = ObjectAnimator.ofFloat(binding.btn3, View.TRANSLATION_Y, 0f).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
-
-        val anim4 = ObjectAnimator.ofFloat(binding.btn4, View.TRANSLATION_X, 0f).apply {
-            interpolator = AccelerateInterpolator()
-            this.duration = duration
-        }
+        val anim1 = getObjectAnimatorHide(binding.btn1, View.TRANSLATION_Y)
+        val anim2 = getObjectAnimatorHide(binding.btn2, View.TRANSLATION_X)
+        val anim3 = getObjectAnimatorHide(binding.btn3, View.TRANSLATION_Y)
+        val anim4 = getObjectAnimatorHide(binding.btn4, View.TRANSLATION_X)
 
         AnimatorSet().apply {
             playTogether(anim1, anim2, anim3, anim4)
@@ -118,6 +89,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 }
             })
             start()
+        }
+    }
+
+    private fun getObjectAnimatorShow(view: View, property: Property<View, Float>, float: Float): ObjectAnimator {
+        return ObjectAnimator.ofFloat(view, property, float).apply {
+            interpolator = AccelerateInterpolator()
+            this.duration = duration
+        }
+    }
+
+    private fun getObjectAnimatorHide(view: View, property: Property<View, Float>): ObjectAnimator {
+        return ObjectAnimator.ofFloat(view, property, 0f).apply {
+            interpolator = AccelerateInterpolator()
+            this.duration = duration
         }
     }
 }
