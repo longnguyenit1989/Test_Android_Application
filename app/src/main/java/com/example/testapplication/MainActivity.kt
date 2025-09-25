@@ -5,63 +5,68 @@ import android.animation.AnimatorListenerAdapter
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
 import android.os.Bundle
+import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
-import jp.co.sompo_japan.drv.ui.base.BaseActivity
+import com.example.testapplication.canvas.CoordinateActivity
+import com.example.testapplication.databinding.ActivityMainBinding
+import com.example.testapplication.map.MapActivity
+import com.example.testapplication.base.BaseActivity
 
-class MainActivity : BaseActivity() {
-
-    private lateinit var buttonHome: Button
-    private lateinit var button1: Button
-    private lateinit var button2: Button
-    private lateinit var button3: Button
-    private lateinit var button4: Button
+class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private var buttonsVisible = false
-    val distance = 200f
-    val duration = 300L
+    val distance = 300f
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setupUi()
+    }
 
-        buttonHome = findViewById(R.id.buttonHome)
-        button1 = findViewById(R.id.button1)
-        button2 = findViewById(R.id.button2)
-        button3 = findViewById(R.id.button3)
-        button4 = findViewById(R.id.button4)
+    override fun inflateBinding(inflater: LayoutInflater): ActivityMainBinding {
+        return ActivityMainBinding.inflate(inflater)
+    }
 
-        buttonHome.setOnClickListener {
+    private fun setupUi() {
+        binding.apply {
+            btnHome.setOnClickListener {
                 if (!buttonsVisible) {
                     showButtons()
                 } else {
                     hideButtons()
                 }
                 buttonsVisible = !buttonsVisible
+            }
+
+            btnMap.setOnClickListener {
+                startActivity(MapActivity.newIntent(this@MainActivity))
+            }
+
+            btnCanvas.setOnClickListener {
+                startActivity(CoordinateActivity.newIntent(this@MainActivity))
+            }
         }
     }
 
-    override fun layoutId() = R.layout.activity_main
-
     private fun showButtons() {
-        // Di chuyển các button ra từ trung tâm của buttonHome
-        val anim1 = ObjectAnimator.ofFloat(button1, View.TRANSLATION_Y, -distance).apply {
+        val anim1 = ObjectAnimator.ofFloat(binding.btn1, View.TRANSLATION_Y, -distance).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
 
-        val anim2 = ObjectAnimator.ofFloat(button2, View.TRANSLATION_X, distance).apply {
+        val anim2 = ObjectAnimator.ofFloat(binding.btn2, View.TRANSLATION_X, distance).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
 
-        val anim3 = ObjectAnimator.ofFloat(button3, View.TRANSLATION_Y, distance, buttonHome.x, buttonHome.y + 300).apply {
+        val anim3 = ObjectAnimator.ofFloat(binding.btn3, View.TRANSLATION_Y, distance).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
 
-        val anim4 = ObjectAnimator.ofFloat(button4, View.TRANSLATION_X, -distance).apply {
+        val anim4 = ObjectAnimator.ofFloat(binding.btn4, View.TRANSLATION_X, -distance).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
@@ -71,31 +76,31 @@ class MainActivity : BaseActivity() {
             start()
         }
 
-        // Hiển thị các button
-        button1.visibility = View.VISIBLE
-        button2.visibility = View.VISIBLE
-        button3.visibility = View.VISIBLE
-        button4.visibility = View.VISIBLE
+        binding.apply {
+            btn1.visibility = View.VISIBLE
+            btn2.visibility = View.VISIBLE
+            btn3.visibility = View.VISIBLE
+            btn4.visibility = View.VISIBLE
+        }
     }
 
     private fun hideButtons() {
-        // Thu các button về lại trung tâm của buttonHome
-        val anim1 = ObjectAnimator.ofFloat(button1, View.TRANSLATION_Y, 0f).apply {
+        val anim1 = ObjectAnimator.ofFloat(binding.btn1, View.TRANSLATION_Y, 0f).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
 
-        val anim2 = ObjectAnimator.ofFloat(button2, View.TRANSLATION_X, 0f).apply {
+        val anim2 = ObjectAnimator.ofFloat(binding.btn2, View.TRANSLATION_X, 0f).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
 
-        val anim3 = ObjectAnimator.ofFloat(button3, View.TRANSLATION_Y, 0f).apply {
+        val anim3 = ObjectAnimator.ofFloat(binding.btn3, View.TRANSLATION_Y, 0f).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
 
-        val anim4 = ObjectAnimator.ofFloat(button4, View.TRANSLATION_X, 0f).apply {
+        val anim4 = ObjectAnimator.ofFloat(binding.btn4, View.TRANSLATION_X, 0f).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
         }
@@ -104,35 +109,16 @@ class MainActivity : BaseActivity() {
             playTogether(anim1, anim2, anim3, anim4)
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator, isReverse: Boolean) {
-                    button1.visibility = View.INVISIBLE
-                    button2.visibility = View.INVISIBLE
-                    button3.visibility = View.INVISIBLE
-                    button4.visibility = View.INVISIBLE
+                    binding.apply {
+                        btn1.visibility = View.GONE
+                        btn2.visibility = View.GONE
+                        btn3.visibility = View.GONE
+                        btn4.visibility = View.GONE
+                    }
                 }
             })
             start()
         }
-
-    }
-}
-
-
-object AnimationUtils {
-    fun moveView(view: View, direction: Int, startX: Float, distance: Float) {
-        var endX = startX
-        var endY = view.y
-        when (direction) {
-            0 -> endX = startX + distance
-            1 -> endX = startX - distance
-            2 -> endY = view.y - distance
-            3 -> endY = view.y + distance
-        }
-        val animatorX = ObjectAnimator.ofFloat(view, "translationX", startX, endX)
-        val animatorY = ObjectAnimator.ofFloat(view, "translationY", view.y, endY)
-        animatorX.setDuration(1000) // Duration in milliseconds
-        animatorY.setDuration(1000)
-        animatorX.start()
-        animatorY.start()
     }
 }
 

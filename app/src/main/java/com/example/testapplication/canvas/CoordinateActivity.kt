@@ -2,18 +2,20 @@ package com.example.testapplication.canvas
 
 import android.content.Context
 import android.content.Intent
+import android.view.LayoutInflater
 import com.example.testapplication.R
-import jp.co.sompo_japan.drv.ui.base.BaseActivity
+import com.example.testapplication.databinding.ActivityCoordinateBinding
+import com.example.testapplication.base.BaseActivity
 
-class CoordinateActivity: BaseActivity() {
+class CoordinateActivity: BaseActivity<ActivityCoordinateBinding>() {
 
     companion object {
-        fun startActivity(context: Context): Intent {
-            return context.run {
-                Intent(this, CoordinateActivity::class.java)
-            }
+        fun newIntent(context: Context): Intent {
+            return Intent(context, CoordinateActivity::class.java)
         }
     }
 
-    override fun layoutId() = R.layout.activity_coordinate
+    override fun inflateBinding(inflater: LayoutInflater): ActivityCoordinateBinding {
+        return ActivityCoordinateBinding.inflate(inflater)
+    }
 }

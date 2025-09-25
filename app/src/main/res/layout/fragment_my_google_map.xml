@@ -65,16 +65,6 @@
                 android:layout_centerInParent="true"
                 android:background="@drawable/drag_handle_bg" />
 
-            <ImageView
-                android:id="@+id/imgNext"
-                android:layout_width="40dp"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:padding="8dp"
-                android:src="@drawable/next"
-                app:tint="@android:color/darker_gray"
-                tools:ignore="ContentDescription" />
-
         </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView

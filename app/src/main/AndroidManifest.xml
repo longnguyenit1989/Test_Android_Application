@@ -13,7 +13,7 @@
         android:theme="@style/Theme.TestApplication"
         tools:targetApi="31">
         <activity
-            android:name=".map.MapActivity"
+            android:name=".MainActivity"
             android:exported="true"
             android:theme="@style/Theme.TestApplication">
             <intent-filter>
@@ -23,9 +23,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".canvas.CoordinateActivity"/>
+        <activity android:name=".map.MapActivity"/>
 
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".canvas.CoordinateActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
