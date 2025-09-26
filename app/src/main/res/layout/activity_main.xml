@@ -14,8 +14,6 @@
         <Button
             android:id="@+id/btnHome"
             style="@style/center_parent_constrain_layout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Home"
             tools:ignore="MissingConstraints" />
 
@@ -52,6 +50,42 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="4"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/center_parent_constrain_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/center_parent_constrain_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/center_parent_constrain_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:visibility="invisible"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/center_parent_constrain_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
             android:visibility="invisible"
             tools:ignore="MissingConstraints" />
 
