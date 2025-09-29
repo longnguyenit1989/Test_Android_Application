@@ -1,9 +1,8 @@
-package com.example.testapplication.canvas
+package com.example.testapplication.ui.canvas
 
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
-import com.example.testapplication.R
 import com.example.testapplication.databinding.ActivityCoordinateBinding
 import com.example.testapplication.base.BaseActivity
 

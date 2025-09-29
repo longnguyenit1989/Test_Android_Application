@@ -23,9 +23,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".map.MapActivity"/>
+        <activity android:name=".ui.map.MapActivity"/>
 
-        <activity android:name=".canvas.CoordinateActivity"/>
+        <activity android:name=".ui.canvas.CoordinateActivity"/>
+
+        <activity android:name=".ui.movebutton.MoveButtonActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

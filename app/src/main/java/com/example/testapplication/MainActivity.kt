@@ -10,9 +10,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
-import com.example.testapplication.canvas.CoordinateActivity
+import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.databinding.ActivityMainBinding
-import com.example.testapplication.map.MapActivity
+import com.example.testapplication.ui.map.MapActivity
+import com.example.testapplication.ui.movebutton.MoveButtonActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -45,6 +46,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnCanvas.setOnClickListener {
                 startActivity(CoordinateActivity.newIntent(this@MainActivity))
+            }
+
+            btnMoveButton.setOnClickListener {
+                startActivity(MoveButtonActivity.newIntent(this@MainActivity))
             }
         }
     }

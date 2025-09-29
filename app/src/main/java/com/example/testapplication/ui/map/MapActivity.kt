@@ -1,4 +1,4 @@
-package com.example.testapplication.map
+package com.example.testapplication.ui.map
 
 import android.content.Context
 import android.content.Intent

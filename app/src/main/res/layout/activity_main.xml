@@ -100,6 +100,16 @@
             tools:ignore="MissingConstraints" />
 
         <Button
+            android:id="@+id/btnMoveButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="move"
+            app:layout_constraintBottom_toTopOf="@+id/btnMap"
+            app:layout_constraintStart_toStartOf="@+id/btnMap"
+            tools:ignore="MissingConstraints" />
+
+        <Button
             android:id="@+id/btnCanvas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
