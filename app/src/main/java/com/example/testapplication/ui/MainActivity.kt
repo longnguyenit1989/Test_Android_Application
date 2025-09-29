@@ -12,6 +12,7 @@ import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
 import com.example.testapplication.ui.canvas.CoordinateActivity
+import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
 
@@ -51,6 +52,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnMoveButton.setOnClickListener {
                 startActivity(MoveButtonActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnDraw.setOnClickListener {
+                startActivity(DrawActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }
