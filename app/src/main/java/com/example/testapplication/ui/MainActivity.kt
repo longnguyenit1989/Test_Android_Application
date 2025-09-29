@@ -1,4 +1,4 @@
-package com.example.testapplication
+package com.example.testapplication.ui
 
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
@@ -10,14 +10,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
-import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.databinding.ActivityMainBinding
+import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private var buttonsVisible = false
+    private var isMovingButton = false;
     val distance = 300f
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,20 +42,25 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             }
 
             btnMap.setOnClickListener {
-                startActivity(MapActivity.newIntent(this@MainActivity))
+                startActivity(MapActivity.Companion.newIntent(this@MainActivity))
             }
 
             btnCanvas.setOnClickListener {
-                startActivity(CoordinateActivity.newIntent(this@MainActivity))
+                startActivity(CoordinateActivity.Companion.newIntent(this@MainActivity))
             }
 
             btnMoveButton.setOnClickListener {
-                startActivity(MoveButtonActivity.newIntent(this@MainActivity))
+                startActivity(MoveButtonActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }
 
     private fun showButtons() {
+        if (isMovingButton) {
+            return
+        }
+        isMovingButton = true
+
         val anim1 = getObjectAnimatorShow(binding.btn1, View.TRANSLATION_Y, -distance)
         val anim2 = getObjectAnimatorShow(binding.btn2, View.TRANSLATION_X, distance)
         val anim3 = getObjectAnimatorShow(binding.btn3, View.TRANSLATION_Y, distance)
@@ -74,6 +80,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
         AnimatorSet().apply {
             playTogether(anim1, anim2, anim3, anim4, anim5X, anim5Y, anim6X, anim6Y, anim7X, anim7Y, anim8X, anim8Y)
+            addListener(object : AnimatorListenerAdapter() {
+                override fun onAnimationEnd(animation: Animator, isReverse: Boolean) {
+                    isMovingButton = false
+                }
+            })
             start()
         }
 
@@ -90,6 +101,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
     }
 
     private fun hideButtons() {
+        if (isMovingButton) {
+            return
+        }
+
+        isMovingButton = true
         val anim1 = getObjectAnimatorHide(binding.btn1, View.TRANSLATION_Y)
         val anim2 = getObjectAnimatorHide(binding.btn2, View.TRANSLATION_X)
         val anim3 = getObjectAnimatorHide(binding.btn3, View.TRANSLATION_Y)
@@ -121,6 +137,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                         btn7.visibility = View.GONE
                         btn8.visibility = View.GONE
                     }
+                    isMovingButton = false
                 }
             })
             start()
@@ -141,5 +158,3 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 }
-
-
