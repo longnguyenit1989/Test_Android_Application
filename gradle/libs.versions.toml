@@ -8,9 +8,11 @@ espressoCore = "3.7.0"
 appcompat = "1.7.1"
 material = "1.13.0"
 constraintlayout = "2.2.1"
-navigationFragmentKtx = "2.9.4"
-navigationUiKtx = "2.9.4"
+navigationFragmentKtx = "2.9.5"
+navigationUiKtx = "2.9.5"
 map = "19.2.0"
+gpuimage = "2.1.0"
+glide = "5.0.5"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -23,6 +25,8 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-navigation-fragment-ktx = { group = "androidx.navigation", name = "navigation-fragment-ktx", version.ref = "navigationFragmentKtx" }
 androidx-navigation-ui-ktx = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigationUiKtx" }
 map = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "map" }
+gpuimage = {group = "jp.co.cyberagent.android", name = "gpuimage", version.ref = "gpuimage"}
+glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 
 
 [plugins]

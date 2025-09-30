@@ -13,6 +13,7 @@ import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
 import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.draw.DrawActivity
+import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
 
@@ -56,6 +57,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnDraw.setOnClickListener {
                 startActivity(DrawActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnFilterImage.setOnClickListener {
+                startActivity(FilterImageActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

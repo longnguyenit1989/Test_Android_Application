@@ -33,6 +33,8 @@
 
         <activity android:name=".ui.draw.DrawActivity"/>
 
+        <activity android:name=".ui.filterimage.FilterImageActivity"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAsIVtswkELFXpUs52b6AwTrtkdh2l0OPk"/>

@@ -100,7 +100,7 @@ class DrawView(context: Context, attrs: AttributeSet? = null) : View(context, at
     fun exportToBitmap(): Bitmap {
         val bitmap = createBitmap(width, height)
         val canvas = Canvas(bitmap)
-        this.draw(canvas) // vẽ toàn bộ view (bao gồm strokes)
+        this.draw(canvas)
         return bitmap
     }
 
