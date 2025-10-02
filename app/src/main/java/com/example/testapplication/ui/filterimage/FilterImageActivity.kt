@@ -22,6 +22,7 @@ import jp.co.cyberagent.android.gpuimage.filter.GPUImageGaussianBlurFilter
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageGrayscaleFilter
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageSepiaToneFilter
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageSketchFilter
+import androidx.core.graphics.createBitmap
 
 class FilterImageActivity : BaseActivity<ActivityFilterImageBinding>() {
     companion object {
@@ -46,9 +47,12 @@ class FilterImageActivity : BaseActivity<ActivityFilterImageBinding>() {
                         resource: Bitmap,
                         transition: Transition<in Bitmap>?
                     ) {
-                        binding.gpuImageView.setImage(resource)
+                        binding.apply {
+                            gpuImageView.gpuImage.deleteImage()
+                            gpuImageView.requestRender()
+                            gpuImageView.setImage(resource)
+                        }
                     }
-
                     override fun onLoadCleared(placeholder: Drawable?) {
 
                     }

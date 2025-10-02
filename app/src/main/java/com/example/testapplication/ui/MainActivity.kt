@@ -16,6 +16,7 @@ import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
+import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -62,6 +63,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             btnFilterImage.setOnClickListener {
                 startActivity(FilterImageActivity.Companion.newIntent(this@MainActivity))
             }
+
+            btnRecycleViewTouch.setOnClickListener {
+                startActivity(RecycleViewTouchActivity.Companion.newIntent(this@MainActivity))
+            }
         }
     }
 
@@ -89,7 +94,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         val anim8Y = getObjectAnimatorShow(binding.btn8, View.TRANSLATION_Y, -distance)
 
         AnimatorSet().apply {
-            playTogether(anim1, anim2, anim3, anim4, anim5X, anim5Y, anim6X, anim6Y, anim7X, anim7Y, anim8X, anim8Y)
+            playTogether(
+                anim1,
+                anim2,
+                anim3,
+                anim4,
+                anim5X,
+                anim5Y,
+                anim6X,
+                anim6Y,
+                anim7X,
+                anim7Y,
+                anim8X,
+                anim8Y
+            )
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator, isReverse: Boolean) {
                     isMovingButton = false
@@ -134,7 +152,20 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         val anim8Y = getObjectAnimatorHide(binding.btn8, View.TRANSLATION_Y)
 
         AnimatorSet().apply {
-            playTogether(anim1, anim2, anim3, anim4, anim5X, anim5Y, anim6X, anim6Y, anim7X, anim7Y, anim8X, anim8Y)
+            playTogether(
+                anim1,
+                anim2,
+                anim3,
+                anim4,
+                anim5X,
+                anim5Y,
+                anim6X,
+                anim6Y,
+                anim7X,
+                anim7Y,
+                anim8X,
+                anim8Y
+            )
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator, isReverse: Boolean) {
                     binding.apply {
@@ -154,7 +185,11 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
     }
 
-    private fun getObjectAnimatorShow(view: View, property: Property<View, Float>, float: Float): ObjectAnimator {
+    private fun getObjectAnimatorShow(
+        view: View,
+        property: Property<View, Float>,
+        float: Float
+    ): ObjectAnimator {
         return ObjectAnimator.ofFloat(view, property, float).apply {
             interpolator = AccelerateInterpolator()
             this.duration = duration
