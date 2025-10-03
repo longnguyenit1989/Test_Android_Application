@@ -16,6 +16,7 @@ import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
+import com.example.testapplication.ui.recycleviewswipe.RecycleViewSwipeActivity
 import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -35,7 +36,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     private fun setupUi() {
         binding.apply {
-            btnHome.setOnClickListener {
+            btnClickMe.setOnClickListener {
                 if (!buttonsVisible) {
                     showButtons()
                 } else {
@@ -66,6 +67,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnRecycleViewTouch.setOnClickListener {
                 startActivity(RecycleViewTouchActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnRecycleViewSwipe.setOnClickListener {
+                startActivity(RecycleViewSwipeActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

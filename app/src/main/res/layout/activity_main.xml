@@ -12,9 +12,9 @@
         android:fitsSystemWindows="true">
 
         <Button
-            android:id="@+id/btnHome"
+            android:id="@+id/btnClickMe"
             style="@style/center_parent_constrain_layout"
-            android:text="Home"
+            android:text="Click me"
             tools:ignore="MissingConstraints" />
 
         <Button
@@ -95,8 +95,18 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="120dp"
             android:text="map"
-            app:layout_constraintBottom_toTopOf="@+id/btnHome"
-            app:layout_constraintStart_toStartOf="@+id/btnHome"
+            app:layout_constraintBottom_toTopOf="@+id/btnClickMe"
+            app:layout_constraintStart_toStartOf="@+id/btnClickMe"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnRecycleViewSwipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="Recycle View Swipe"
+            app:layout_constraintBottom_toTopOf="@+id/btnRecycleViewTouch"
+            app:layout_constraintStart_toStartOf="@+id/btnRecycleViewTouch"
             tools:ignore="MissingConstraints" />
 
         <Button
@@ -125,8 +135,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="120dp"
             android:text="canvas"
-            app:layout_constraintStart_toStartOf="@+id/btnHome"
-            app:layout_constraintTop_toBottomOf="@+id/btnHome"
+            app:layout_constraintStart_toStartOf="@+id/btnClickMe"
+            app:layout_constraintTop_toBottomOf="@+id/btnClickMe"
             tools:ignore="MissingConstraints" />
 
         <Button

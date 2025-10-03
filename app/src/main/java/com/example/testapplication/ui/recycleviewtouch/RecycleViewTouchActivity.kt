@@ -43,15 +43,14 @@ class RecycleViewTouchActivity : BaseActivity<ActivityRecycleViewTouchBinding>()
             ): Boolean {
                 val fromPos = viewHolder.bindingAdapterPosition
                 val toPos = target.bindingAdapterPosition
-                adapter.onItemMove(fromPos, toPos) // chỉ swap tạm UI
+                adapter.onItemMove(fromPos, toPos)
                 return true
             }
 
             override fun onSwiped(viewHolder: RecyclerView.ViewHolder, direction: Int) {
-                // không xử lý swipe
+
             }
 
-            // 🔥 Cho 2 hàm này vào đây
             override fun onSelectedChanged(viewHolder: RecyclerView.ViewHolder?, actionState: Int) {
                 super.onSelectedChanged(viewHolder, actionState)
                 if (actionState == ItemTouchHelper.ACTION_STATE_DRAG) {
@@ -80,7 +79,7 @@ class RecycleViewTouchActivity : BaseActivity<ActivityRecycleViewTouchBinding>()
         val itemTouchHelper = ItemTouchHelper(callback)
 
         adapter = RecycleViewTouchAdapter(data) { viewHolder ->
-            itemTouchHelper.startDrag(viewHolder) // kéo bằng handle
+            itemTouchHelper.startDrag(viewHolder)
         }
 
         binding.recyclerViewTouch.layoutManager = LinearLayoutManager(this)
