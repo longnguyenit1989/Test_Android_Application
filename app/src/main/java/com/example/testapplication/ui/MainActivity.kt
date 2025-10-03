@@ -16,6 +16,7 @@ import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
+import com.example.testapplication.ui.recycleviewmultilevel.RecycleViewMultiLevelActivity
 import com.example.testapplication.ui.recycleviewswipe.RecycleViewSwipeActivity
 import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
 
@@ -71,6 +72,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnRecycleViewSwipe.setOnClickListener {
                 startActivity(RecycleViewSwipeActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnRecycleViewMultiLevel.setOnClickListener {
+                startActivity(RecycleViewMultiLevelActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }
