@@ -19,6 +19,7 @@ import com.example.testapplication.ui.movebutton.MoveButtonActivity
 import com.example.testapplication.ui.recycleviewmultilevel.RecycleViewMultiLevelActivity
 import com.example.testapplication.ui.recycleviewswipe.RecycleViewSwipeActivity
 import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
+import com.example.testapplication.ui.searchtag.SearchTagActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
 
@@ -76,6 +77,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnRecycleViewMultiLevel.setOnClickListener {
                 startActivity(RecycleViewMultiLevelActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnSearchTag.setOnClickListener {
+                startActivity(SearchTagActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

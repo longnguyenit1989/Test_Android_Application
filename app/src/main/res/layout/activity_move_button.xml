@@ -1,13 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15" />
+
+    <View
+        android:id="@+id/borderView"
+        android:layout_width="97dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_red_border_stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop15" />
+
+    <View
+        android:id="@+id/borderView1"
+        android:layout_width="97dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_red_border_stroke"
+        app:layout_constraintEnd_toStartOf="@+id/borderView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop15" />
+
+    <View
+        android:id="@+id/borderView2"
+        android:layout_width="97dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_red_border_stroke"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/borderView"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop15" />
+
     <Button
         android:id="@+id/btnMove"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
         android:text="move"
-        android:layout_centerInParent="true"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+    <Button
+        android:id="@+id/btnClickMe1"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:text="ClickMe 1"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toStartOf="@+id/btnMove"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnMove" />
+
+    <Button
+        android:id="@+id/btnClickMe2"
+        android:layout_width="95dp"
+        android:layout_height="48dp"
+        android:text="ClickMe 2"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnMove"
+        app:layout_constraintTop_toTopOf="@+id/btnMove" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

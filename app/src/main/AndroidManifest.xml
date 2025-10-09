@@ -41,6 +41,8 @@
 
         <activity android:name=".ui.recycleviewmultilevel.RecycleViewMultiLevelActivity"/>
 
+        <activity android:name=".ui.searchtag.SearchTagActivity"/>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAsIVtswkELFXpUs52b6AwTrtkdh2l0OPk"/>

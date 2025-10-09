@@ -1,6 +1,7 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="corner_radius">16dp</dimen>
+    <dimen name="smallest_corner_radius">4dp</dimen>
     <dimen name="smallest_margin">4dp</dimen>
     <dimen name="xxx_small_margin">8dp</dimen>
     <dimen name="xx_small_margin">12dp</dimen>
