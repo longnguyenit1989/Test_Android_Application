@@ -15,6 +15,7 @@ import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActivity
 import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
+import com.example.testapplication.ui.languageselect.LanguageSelectActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
 import com.example.testapplication.ui.recycleviewmultilevel.RecycleViewMultiLevelActivity
@@ -52,7 +53,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
                 startActivity(MapActivity.Companion.newIntent(this@MainActivity))
             }
 
-            btnCanvas.setOnClickListener {
+            btnCoordinate.setOnClickListener {
                 startActivity(CoordinateActivity.Companion.newIntent(this@MainActivity))
             }
 
@@ -86,6 +87,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnChooseAndCropImage.setOnClickListener {
                 startActivity(ChooseAndCropImageActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnChooseLanguage.setOnClickListener {
+                startActivity(LanguageSelectActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

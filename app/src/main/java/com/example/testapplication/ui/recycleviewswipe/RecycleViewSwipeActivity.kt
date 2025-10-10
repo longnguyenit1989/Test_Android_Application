@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.testapplication.R
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityRecycleViewSwipeBinding
 
@@ -30,7 +31,12 @@ class RecycleViewSwipeActivity: BaseActivity<ActivityRecycleViewSwipeBinding>() 
     }
 
     private fun setRecycleViewSwipe() {
-        val items = mutableListOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+        val nameItem1 = "${getString(R.string.item)} 1"
+        val nameItem2 = "${getString(R.string.item)} 2"
+        val nameItem3 = "${getString(R.string.item)} 3"
+        val nameItem4 = "${getString(R.string.item)} 4"
+        val nameItem5 = "${getString(R.string.item)} 5"
+        val items = mutableListOf(nameItem1, nameItem2, nameItem3, nameItem4, nameItem5)
 
         adapter = RecycleViewSwipeAdapter(items) { position ->
             adapter.removeAt(position)

@@ -16,10 +16,11 @@
             android:layout_width="80dp"
             android:layout_height="match_parent"
             android:background="@drawable/bg_red"
-            android:text="Delete"
+            android:text="@string/delete"
             android:textColor="@android:color/white"
+            android:textSize="12sp"
             app:backgroundTint="@null"
-            app:rippleColor="@null"/>
+            app:rippleColor="@null" />
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
@@ -43,7 +44,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Item"
+                android:text="@string/item"
                 android:textSize="18sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

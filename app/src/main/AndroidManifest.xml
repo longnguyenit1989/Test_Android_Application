@@ -45,6 +45,8 @@
 
         <activity android:name=".ui.chooseandcropimage.ChooseAndCropImageActivity"/>
 
+        <activity android:name=".ui.languageselect.LanguageSelectActivity"/>
+
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.MyUCrop"

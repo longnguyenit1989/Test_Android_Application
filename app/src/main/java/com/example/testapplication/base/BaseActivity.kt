@@ -2,6 +2,7 @@ package com.example.testapplication.base
 
 import android.R
 import android.annotation.SuppressLint
+import android.content.Context
 import android.content.pm.ActivityInfo
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +11,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.viewbinding.ViewBinding
+import com.example.testapplication.utils.LocaleHelper
 
 abstract class BaseActivity<T : ViewBinding>  : AppCompatActivity() {
 
     protected lateinit var binding: T
+
+    override fun attachBaseContext(newBase: Context) {
+        val context = LocaleHelper.loadLocale(newBase)
+        super.attachBaseContext(context)
+    }
 
     @SuppressLint("SourceLockedOrientationActivity")
     override fun onCreate(savedInstanceState: Bundle?) {

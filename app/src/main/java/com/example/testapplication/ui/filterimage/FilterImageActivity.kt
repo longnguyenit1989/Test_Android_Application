@@ -22,7 +22,6 @@ import jp.co.cyberagent.android.gpuimage.filter.GPUImageGaussianBlurFilter
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageGrayscaleFilter
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageSepiaToneFilter
 import jp.co.cyberagent.android.gpuimage.filter.GPUImageSketchFilter
-import androidx.core.graphics.createBitmap
 
 class FilterImageActivity : BaseActivity<ActivityFilterImageBinding>() {
     companion object {

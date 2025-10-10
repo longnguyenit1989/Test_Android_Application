@@ -14,37 +14,33 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingHorizontal="8dp">
+        android:paddingHorizontal="@dimen/smallest_padding">
 
         <Button
             android:id="@+id/btnUndo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/button_default"
             android:layout_weight="1"
-            android:text="Undo" />
+            android:text="@string/undo" />
 
         <Button
             android:id="@+id/btnRedo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="8dp"
+            style="@style/button_default"
+            android:layout_marginHorizontal="@dimen/smallest_margin"
             android:layout_weight="1"
-            android:text="Redo" />
+            android:text="@string/redo" />
 
         <Button
             android:id="@+id/btnClear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            style="@style/button_default"
+            android:layout_marginEnd="@dimen/smallest_margin"
             android:layout_weight="1"
-            android:text="Clear" />
+            android:text="@string/clear" />
 
         <Button
             android:id="@+id/btnSave"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/button_default"
             android:layout_weight="1"
-            android:text="Save" />
+            android:text="@string/save" />
 
     </LinearLayout>
 
@@ -60,21 +56,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
-            android:text="Đen"
+            android:text="@string/black"
             android:textColor="#000000" />
 
         <RadioButton
             android:id="@+id/radioRed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Đỏ"
+            android:text="@string/red"
             android:textColor="#FF0000" />
 
         <RadioButton
             android:id="@+id/radioBlue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Xanh"
+            android:text="@string/blue"
             android:textColor="#0000FF" />
     </RadioGroup>
 

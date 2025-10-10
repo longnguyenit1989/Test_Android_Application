@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Ứng dụng thử nghiệm</string>
+    <string name="action_settings">Cài đặt</string>
+
+    <string name="recycle_view_multi_level">Recycle view nhiều cấp</string>
+    <string name="recycle_view_swipe">Recycle view vuốt</string>
+    <string name="recycle_view_touch">Recycle view giữ</string>
+    <string name="move">Di chuyển</string>
+    <string name="map">Bản đồ</string>
+    <string name="click_me">Click tôi</string>
+    <string name="coordinate_system">Hệ toạ độ</string>
+    <string name="draw">Vẽ</string>
+    <string name="filter_image">Ảnh Filter</string>
+    <string name="choose_image">Chọn ảnh</string>
+    <string name="choose_crop_image">Chọn và cắt image</string>
+    <string name="capture_images">Chụp ảnh</string>
+    <string name="search_tag">Tìm theo tag</string>
+    <string name="language_select">Chọn ngôn ngữ</string>
+    <string name="vietnamese">Việt Nam</string>
+    <string name="english">Tiếng Anh</string>
+
+    <string name="delete">Xoá</string>
+    <string name="share">Chia sẻ</string>
+    <string name="cancel">Huỷ</string>
+
+    <string name="click_me_1">click tôi 1</string>
+    <string name="click_me_2">click tôi 2</string>
+    <string name="undo">Hoàn tác</string>
+    <string name="redo">Làm lại</string>
+    <string name="clear">Xoá hết</string>
+    <string name="save">Lưu</string>
+
+    <string name="black">Đen</string>
+    <string name="red">Đỏ</string>
+    <string name="blue">Xanh</string>
+
+    <string name="item">Phần tử</string>
+</resources>

@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.testapplication.R
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityRecycleViewTouchBinding
 
@@ -31,7 +32,12 @@ class RecycleViewTouchActivity : BaseActivity<ActivityRecycleViewTouchBinding>()
     }
 
     private fun setRecycleViewTouch() {
-        val data = mutableListOf("Item 1", "Item 2", "Item 3", "Item 4", "Item 5")
+        val nameItem1 = "${getString(R.string.item)} 1"
+        val nameItem2 = "${getString(R.string.item)} 2"
+        val nameItem3 = "${getString(R.string.item)} 3"
+        val nameItem4 = "${getString(R.string.item)} 4"
+        val nameItem5 = "${getString(R.string.item)} 5"
+        val items = mutableListOf(nameItem1, nameItem2, nameItem3, nameItem4, nameItem5)
 
         val callback = object : ItemTouchHelper.SimpleCallback(
             ItemTouchHelper.UP or ItemTouchHelper.DOWN, 0
@@ -78,7 +84,7 @@ class RecycleViewTouchActivity : BaseActivity<ActivityRecycleViewTouchBinding>()
 
         val itemTouchHelper = ItemTouchHelper(callback)
 
-        adapter = RecycleViewTouchAdapter(data) { viewHolder ->
+        adapter = RecycleViewTouchAdapter(items) { viewHolder ->
             itemTouchHelper.startDrag(viewHolder)
         }
 

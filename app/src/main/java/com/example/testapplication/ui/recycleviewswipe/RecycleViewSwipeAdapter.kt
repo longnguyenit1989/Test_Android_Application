@@ -22,8 +22,9 @@ class RecycleViewSwipeAdapter(
         val item = items[position]
         holder.binding.textView.text = item
         holder.binding.btnDelete.setOnClickListener {
-            onDelete(holder.adapterPosition)
+            onDelete(holder.layoutPosition)
         }
+        holder.binding.viewForeground.setOnClickListener {  }
     }
 
     override fun getItemCount() = items.size

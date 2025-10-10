@@ -22,14 +22,13 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Item"
+            android:text="@string/item"
             android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/dragHandle"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:contentDescription="Drag handle"
             android:src="@android:drawable/ic_menu_sort_by_size" />
     </LinearLayout>
 
