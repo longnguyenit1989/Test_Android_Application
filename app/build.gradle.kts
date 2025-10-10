@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.map)
     implementation(libs.gpuimage)
     implementation(libs.glide)
+    implementation(libs.ucrop)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

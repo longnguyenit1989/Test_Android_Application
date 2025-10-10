@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Can save image in cache -->
+    <cache-path
+        name="images"
+        path="." />
+
+    <!-- If save image in folder -->
+    <external-files-path
+        name="external_images"
+        path="Pictures/" />
+</paths>

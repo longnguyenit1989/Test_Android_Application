@@ -12,6 +12,7 @@ import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
 import com.example.testapplication.ui.canvas.CoordinateActivity
+import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActivity
 import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.map.MapActivity
@@ -81,6 +82,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnSearchTag.setOnClickListener {
                 startActivity(SearchTagActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnChooseAndCropImage.setOnClickListener {
+                startActivity(ChooseAndCropImageActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }
