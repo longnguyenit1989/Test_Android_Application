@@ -1,0 +1,38 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tvMonthTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:padding="8dp"/>
+
+    <LinearLayout
+        android:id="@+id/llWeekdays"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <TextView android:text="@string/sun" style="@style/WeekdayStyle" android:textColor="@color/red"/>
+        <TextView android:text="@string/mon" style="@style/WeekdayStyle"/>
+        <TextView android:text="@string/tue" style="@style/WeekdayStyle"/>
+        <TextView android:text="@string/wed" style="@style/WeekdayStyle"/>
+        <TextView android:text="@string/thu" style="@style/WeekdayStyle"/>
+        <TextView android:text="@string/fri" style="@style/WeekdayStyle"/>
+        <TextView android:text="@string/sat" style="@style/WeekdayStyle"/>
+    </LinearLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/viewPagerCalendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
+

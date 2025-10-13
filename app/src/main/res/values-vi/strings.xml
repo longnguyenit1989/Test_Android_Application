@@ -81,4 +81,16 @@
     <string name="method_biometric">sinh trắc học</string>
     <string name="auth">Xác thực</string>
 
+    <string name="calendar">Lịch</string>
+
+    <string name="sun">CN</string>
+    <string name="mon">Hai</string>
+    <string name="tue">Ba</string>
+    <string name="wed">Tư</string>
+    <string name="thu">Năm</string>
+    <string name="fri">Sáu</string>
+    <string name="sat">Bảy</string>
+
+    <string name="go_to_work">Đi làm</string>
+
 </resources>

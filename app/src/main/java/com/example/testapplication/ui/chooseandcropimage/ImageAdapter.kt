@@ -9,6 +9,8 @@ import android.widget.FrameLayout
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.example.testapplication.extension.beGone
+import com.example.testapplication.extension.beVisible
 
 class ImageAdapter(
     private val context: Context,
@@ -53,14 +55,13 @@ class ImageAdapter(
                 container.addView(this)
             })
 
-        // Load image
         Glide.with(context)
             .load(imageUri)
             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC)
             .into(imageView)
 
         if (isSelectionMode) {
-            overlay.visibility = View.VISIBLE
+            overlay.beVisible()
             val isSelected = selectedItems.contains(imageUri)
             overlay.setImageResource(
                 if (isSelected) android.R.drawable.checkbox_on_background
@@ -79,7 +80,7 @@ class ImageAdapter(
                 overlay.scaleY = 1f
             }
         } else {
-            overlay.visibility = View.GONE
+            overlay.beGone()
             imageView.scaleX = 1f
             imageView.scaleY = 1f
             overlay.scaleX = 1f

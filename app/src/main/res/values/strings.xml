@@ -75,8 +75,20 @@
     <string name="no_biometric_available">Biometric authentication not available.</string>
 
     <string name="method_pin">PIN</string>
-    <string name="method_pattern">pattern</string>
-    <string name="method_biometric">biometric</string>
-    <string name="auth">auth</string>
+    <string name="method_pattern">Pattern</string>
+    <string name="method_biometric">Biometric</string>
+    <string name="auth">Auth</string>
+
+    <string name="calendar">Calendar</string>
+
+    <string name="sun">Sun</string>
+    <string name="mon">Mon</string>
+    <string name="tue">Tue</string>
+    <string name="wed">Wed</string>
+    <string name="thu">Thu</string>
+    <string name="fri">Fri</string>
+    <string name="sat">Sat</string>
+
+    <string name="go_to_work">Go to work</string>
 
 </resources>

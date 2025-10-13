@@ -1,10 +1,11 @@
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testapplication.databinding.ItemClassBinding
 import com.example.testapplication.databinding.ItemSchoolBinding
 import com.example.testapplication.databinding.ItemTeacherBinding
+import com.example.testapplication.extension.beGone
+import com.example.testapplication.extension.beVisible
 import com.example.testapplication.model.ClassRoom
 import com.example.testapplication.model.School
 import com.example.testapplication.model.Teacher
@@ -89,7 +90,12 @@ class MultiLevelAdapter(private val schools: List<School>) :
 
         fun bind(classRoom: ClassRoom) {
             binding.tvClass.text = classRoom.name
-            binding.ivArrow.visibility = if (classRoom.teachers.isNotEmpty()) View.VISIBLE else View.GONE
+            if (classRoom.teachers.isNotEmpty()) {
+                binding.ivArrow.beVisible()
+            } else {
+                binding.ivArrow.beGone()
+            }
+
             binding.ivArrow.rotation = if (classRoom.isExpanded) 180f else 0f
 
             binding.root.setOnClickListener {

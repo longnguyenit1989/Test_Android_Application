@@ -11,7 +11,10 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
+import com.example.testapplication.extension.beGone
+import com.example.testapplication.extension.beVisible
 import com.example.testapplication.ui.biometric.BiometricActivity
+import com.example.testapplication.ui.calendar.CalendarActivity
 import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActivity
 import com.example.testapplication.ui.draw.DrawActivity
@@ -97,6 +100,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             btnBiometric.setOnClickListener {
                 startActivity(BiometricActivity.Companion.newIntent(this@MainActivity))
             }
+
+            btnCalendar.setOnClickListener {
+                startActivity(CalendarActivity.Companion.newIntent(this@MainActivity))
+            }
         }
     }
 
@@ -147,14 +154,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         }
 
         binding.apply {
-            btn1.visibility = View.VISIBLE
-            btn2.visibility = View.VISIBLE
-            btn3.visibility = View.VISIBLE
-            btn4.visibility = View.VISIBLE
-            btn5.visibility = View.VISIBLE
-            btn6.visibility = View.VISIBLE
-            btn7.visibility = View.VISIBLE
-            btn8.visibility = View.VISIBLE
+            btn1.beVisible()
+            btn2.beVisible()
+            btn3.beVisible()
+            btn4.beVisible()
+            btn5.beVisible()
+            btn6.beVisible()
+            btn7.beVisible()
+            btn8.beVisible()
         }
     }
 
@@ -199,14 +206,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
             addListener(object : AnimatorListenerAdapter() {
                 override fun onAnimationEnd(animation: Animator, isReverse: Boolean) {
                     binding.apply {
-                        btn1.visibility = View.GONE
-                        btn2.visibility = View.GONE
-                        btn3.visibility = View.GONE
-                        btn4.visibility = View.GONE
-                        btn5.visibility = View.GONE
-                        btn6.visibility = View.GONE
-                        btn7.visibility = View.GONE
-                        btn8.visibility = View.GONE
+                        btn1.beGone()
+                        btn2.beGone()
+                        btn3.beGone()
+                        btn4.beGone()
+                        btn5.beGone()
+                        btn6.beGone()
+                        btn7.beGone()
+                        btn8.beGone()
                     }
                     isMovingButton = false
                 }

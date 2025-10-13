@@ -6,13 +6,14 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.ImageView
 import androidx.activity.result.PickVisualMediaRequest
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityChooseAndCropImageBinding
+import com.example.testapplication.extension.beGone
+import com.example.testapplication.extension.beVisible
 import com.yalantis.ucrop.UCrop
 import java.io.File
 
@@ -148,7 +149,12 @@ class ChooseAndCropImageActivity : BaseActivity<ActivityChooseAndCropImageBindin
             }
         )
 
-        binding.selectionActions.visibility = if (isSelectionMode) View.VISIBLE else View.GONE
+        if (isSelectionMode) {
+            binding.selectionActions.beVisible()
+        } else {
+            binding.selectionActions.beGone()
+        }
+
     }
 
     private fun animateSelectionAtPosition(position: Int) {
@@ -160,7 +166,7 @@ class ChooseAndCropImageActivity : BaseActivity<ActivityChooseAndCropImageBindin
             val overlay = child.findViewWithTag<ImageView>("overlay")
 
             if (overlay != null) {
-                overlay.visibility = View.VISIBLE
+                overlay.beVisible()
                 overlay.run { setImageResource(android.R.drawable.checkbox_on_background) }
                 overlay.scaleX = 1f
                 overlay.scaleY = 1f

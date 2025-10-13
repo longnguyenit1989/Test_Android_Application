@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Toast
 import androidx.biometric.BiometricManager
 import androidx.biometric.BiometricPrompt
@@ -12,6 +11,8 @@ import androidx.core.content.ContextCompat
 import com.example.testapplication.R
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityBiometricBinding
+import com.example.testapplication.extension.beGone
+import com.example.testapplication.extension.beVisible
 import com.example.testapplication.utils.SecurePrefs
 import java.util.concurrent.Executor
 
@@ -55,25 +56,25 @@ class BiometricActivity : BaseActivity<ActivityBiometricBinding>() {
             btnSetPattern.setOnClickListener { showPattern(true) }
 
             btnBack.setOnClickListener {
-                pinContainer.visibility = View.GONE
-                patternContainer.visibility = View.GONE
-                optionContainer.visibility = View.VISIBLE
+                pinContainer.beGone()
+                patternContainer.beGone()
+                optionContainer.beVisible()
                 tvStatus.text = getString(R.string.status_choose_method)
             }
         }
     }
 
     private fun showOptionSelection() {
-        binding.optionContainer.visibility = View.VISIBLE
-        binding.pinContainer.visibility = View.GONE
-        binding.patternContainer.visibility = View.GONE
+        binding.optionContainer.beVisible()
+        binding.pinContainer.beGone()
+        binding.patternContainer.beGone()
     }
 
     private fun showPin(settingMode: Boolean) {
         isSettingPin = settingMode
-        binding.optionContainer.visibility = View.GONE
-        binding.patternContainer.visibility = View.GONE
-        binding.pinContainer.visibility = View.VISIBLE
+        binding.optionContainer.beGone()
+        binding.patternContainer.beGone()
+        binding.pinContainer.beVisible()
         binding.etPin.text?.clear()
 
         if (isSettingPin) {
@@ -105,9 +106,9 @@ class BiometricActivity : BaseActivity<ActivityBiometricBinding>() {
 
     private fun showPattern(settingMode: Boolean) {
         isSettingPattern = settingMode
-        binding.optionContainer.visibility = View.GONE
-        binding.pinContainer.visibility = View.GONE
-        binding.patternContainer.visibility = View.VISIBLE
+        binding.optionContainer.beGone()
+        binding.pinContainer.beGone()
+        binding.patternContainer.beVisible()
         binding.patternView.clearPattern()
 
         if (isSettingPattern) {
@@ -205,8 +206,8 @@ class BiometricActivity : BaseActivity<ActivityBiometricBinding>() {
         binding.tvStatus.text = getString(R.string.auth_success, method)
         Toast.makeText(this, getString(R.string.login_success), Toast.LENGTH_SHORT).show()
 
-        binding.pinContainer.visibility = View.GONE
-        binding.patternContainer.visibility = View.GONE
-        binding.optionContainer.visibility = View.VISIBLE
+        binding.pinContainer.beGone()
+        binding.patternContainer.beGone()
+        binding.optionContainer.beVisible()
     }
 }

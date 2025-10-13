@@ -6,9 +6,9 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.view.LayoutInflater
-import android.view.View
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityLanguageSelectBinding
+import com.example.testapplication.extension.beVisible
 import com.example.testapplication.ui.MainActivity
 import com.example.testapplication.utils.LocaleHelper
 
@@ -40,7 +40,7 @@ class LanguageSelectActivity : BaseActivity<ActivityLanguageSelectBinding>() {
 
     private fun changeLanguage(languageCode: String) {
         binding.apply {
-            progressBar.visibility = View.VISIBLE
+            progressBar.beVisible()
             btnEnglish.isEnabled = false
             btnVietnamese.isEnabled = false
         }

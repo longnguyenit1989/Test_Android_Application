@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="top|center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:paddingBottom="4dp">
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal">
+
+        <View
+            android:id="@+id/viewTodayCircle"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:background="@drawable/bg_today_circle"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tvDayNumber"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tvLunarDay"
+        android:textSize="12sp"
+        android:textColor="#999999"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <LinearLayout
+        android:id="@+id/llEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="2dp"/>
+
+</LinearLayout>
