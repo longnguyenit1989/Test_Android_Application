@@ -11,6 +11,7 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
+import com.example.testapplication.ui.biometric.BiometricActivity
 import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActivity
 import com.example.testapplication.ui.draw.DrawActivity
@@ -91,6 +92,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnChooseLanguage.setOnClickListener {
                 startActivity(LanguageSelectActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnBiometric.setOnClickListener {
+                startActivity(BiometricActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

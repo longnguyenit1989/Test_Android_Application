@@ -14,6 +14,8 @@ map = "19.2.0"
 gpuimage = "2.1.0"
 glide = "5.0.5"
 ucrop = "2.2.10"
+biometric = "1.1.0"
+securityCrypto = "1.1.0-alpha06"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -29,6 +31,8 @@ map = { group = "com.google.android.gms", name = "play-services-maps", version.r
 gpuimage = {group = "jp.co.cyberagent.android", name = "gpuimage", version.ref = "gpuimage"}
 glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
+biometric = {group = "androidx.biometric", name = "biometric", version.ref = "biometric"}
+securityCrypto = {group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto"}
 
 
 [plugins]

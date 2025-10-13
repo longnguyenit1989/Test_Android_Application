@@ -36,4 +36,49 @@
     <string name="blue">Xanh</string>
 
     <string name="item">Phần tử</string>
+
+    <string name="title_auth">Xác thực</string>
+    <string name="status_choose_method">Chọn phương thức xác thực</string>
+    <string name="status_no_security">Chưa có phương thức bảo mật. Hãy chọn để thiết lập:</string>
+    <string name="status_enter_pin">Nhập mã PIN để xác thực</string>
+    <string name="status_enter_new_pin">Nhập mã PIN mới (4 chữ số)</string>
+    <string name="status_draw_pattern">Vẽ hình để xác thực</string>
+    <string name="status_draw_new_pattern">Vẽ hình mẫu mới</string>
+
+    <string name="use_face">Dùng khuôn mặt</string>
+    <string name="use_fingerprint">Dùng vân tay</string>
+    <string name="use_pin">Dùng PIN</string>
+    <string name="use_pattern">Dùng hình vẽ</string>
+    <string name="set_new_pin">Thiết lập PIN mới</string>
+    <string name="set_new_pattern">Thiết lập hình vẽ mới</string>
+    <string name="back">Quay lại</string>
+    <string name="submit">Xác nhận</string>
+
+    <string name="pin_length_error">PIN phải có 4 chữ số</string>
+    <string name="pin_saved">Đã lưu mã PIN!</string>
+    <string name="pattern_saved">Đã lưu hình mẫu!</string>
+    <string name="pin_incorrect">PIN không đúng. Thử lại.</string>
+    <string name="pattern_incorrect">Hình không đúng. Thử lại.</string>
+    <string name="pattern_too_short">Hình quá ngắn</string>
+    <string name="auth_success">✅ Xác thực thành công bằng %1$s!</string>
+    <string name="login_success">Đăng nhập thành công!</string>
+    <string name="auth_error">Lỗi xác thực: %1$s</string>
+    <string name="auth_failed">Không nhận diện được. Thử lại.</string>
+
+    <string name="auth_fingerprint_title">Xác thực bằng vân tay</string>
+    <string name="auth_fingerprint_subtitle">Chạm cảm biến vân tay để xác thực</string>
+    <string name="auth_face_title">Xác thực bằng khuôn mặt</string>
+    <string name="auth_face_subtitle">Nhìn vào camera để xác thực</string>
+    <string name="auth_cancel">Hủy</string>
+    <string name="no_fingerprint_sensor">Thiết bị không có cảm biến vân tay.</string>
+    <string name="no_fingerprint_enrolled">Chưa đăng ký vân tay trong Cài đặt.</string>
+    <string name="no_face_support">Thiết bị không hỗ trợ nhận diện khuôn mặt.</string>
+    <string name="no_face_enrolled">Chưa đăng ký khuôn mặt trong Cài đặt.</string>
+    <string name="no_biometric_available">Không thể dùng sinh trắc học trên thiết bị này.</string>
+
+    <string name="method_pin">mã PIN</string>
+    <string name="method_pattern">hình vẽ</string>
+    <string name="method_biometric">sinh trắc học</string>
+    <string name="auth">Xác thực</string>
+
 </resources>

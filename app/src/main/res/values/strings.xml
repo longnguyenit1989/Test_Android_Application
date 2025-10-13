@@ -35,4 +35,48 @@
 
     <string name="item">Item</string>
 
+    <string name="title_auth">Authentication</string>
+    <string name="status_choose_method">Choose authentication method</string>
+    <string name="status_no_security">No security method configured. Please set up one:</string>
+    <string name="status_enter_pin">Enter your PIN to authenticate</string>
+    <string name="status_enter_new_pin">Enter new PIN (4 digits)</string>
+    <string name="status_draw_pattern">Draw your pattern to authenticate</string>
+    <string name="status_draw_new_pattern">Draw new unlock pattern</string>
+
+    <string name="use_face">Use Face</string>
+    <string name="use_fingerprint">Use Fingerprint</string>
+    <string name="use_pin">Use PIN</string>
+    <string name="use_pattern">Use Pattern</string>
+    <string name="set_new_pin">Set new PIN</string>
+    <string name="set_new_pattern">Set new Pattern</string>
+    <string name="back">Back</string>
+    <string name="submit">Confirm</string>
+
+    <string name="pin_length_error">PIN must be 4 digits</string>
+    <string name="pin_saved">PIN saved!</string>
+    <string name="pattern_saved">Pattern saved!</string>
+    <string name="pin_incorrect">Incorrect PIN. Try again.</string>
+    <string name="pattern_incorrect">Incorrect pattern. Try again.</string>
+    <string name="pattern_too_short">Pattern too short</string>
+    <string name="auth_success">✅ Authentication succeeded with %1$s!</string>
+    <string name="login_success">Login successful!</string>
+    <string name="auth_error">Authentication error: %1$s</string>
+    <string name="auth_failed">Authentication failed. Try again.</string>
+
+    <string name="auth_fingerprint_title">Fingerprint Authentication</string>
+    <string name="auth_fingerprint_subtitle">Touch the fingerprint sensor to verify</string>
+    <string name="auth_face_title">Face Authentication</string>
+    <string name="auth_face_subtitle">Look at the camera to verify</string>
+    <string name="auth_cancel">Cancel</string>
+    <string name="no_fingerprint_sensor">No fingerprint sensor on device.</string>
+    <string name="no_fingerprint_enrolled">No fingerprints enrolled in Settings.</string>
+    <string name="no_face_support">Face recognition not supported on this device.</string>
+    <string name="no_face_enrolled">No face enrolled in Settings.</string>
+    <string name="no_biometric_available">Biometric authentication not available.</string>
+
+    <string name="method_pin">PIN</string>
+    <string name="method_pattern">pattern</string>
+    <string name="method_biometric">biometric</string>
+    <string name="auth">auth</string>
+
 </resources>

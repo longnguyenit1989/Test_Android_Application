@@ -47,6 +47,8 @@ dependencies {
     implementation(libs.gpuimage)
     implementation(libs.glide)
     implementation(libs.ucrop)
+    implementation(libs.biometric)
+    implementation(libs.securityCrypto)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

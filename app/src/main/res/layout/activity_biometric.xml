@@ -1,0 +1,125 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/headerContainer"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@android:drawable/ic_media_previous"
+            android:contentDescription="@string/back" />
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_marginStart="8dp"
+            android:text="@string/title_auth"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:text="@string/status_choose_method"
+        android:textSize="18sp"
+        android:layout_marginBottom="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/optionContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btnUseFace"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_face" />
+
+        <Button
+            android:id="@+id/btnUseBiometric"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_fingerprint"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnUsePin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_pin"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnUsePattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/use_pattern"
+            android:layout_marginTop="8dp" />
+
+        <Button
+            android:id="@+id/btnSetPin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_new_pin"
+            android:layout_marginTop="12dp" />
+
+        <Button
+            android:id="@+id/btnSetPattern"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/set_new_pattern"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/pinContainer"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/etPin"
+            android:maxLength="4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberPassword"
+            android:hint="@string/use_pin" />
+
+        <Button
+            android:id="@+id/btnSubmitPin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/patternContainer"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.example.testapplication.ui.biometric.PatternView
+            android:id="@+id/patternView"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp" />
+    </LinearLayout>
+</LinearLayout>

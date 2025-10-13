@@ -47,6 +47,8 @@
 
         <activity android:name=".ui.languageselect.LanguageSelectActivity"/>
 
+        <activity android:name=".ui.biometric.BiometricActivity"/>
+
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.MyUCrop"
