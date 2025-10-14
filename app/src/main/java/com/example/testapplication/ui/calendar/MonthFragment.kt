@@ -13,8 +13,11 @@ import com.example.testapplication.databinding.FragmentMonthBinding
 class MonthFragment : BaseFragment<FragmentMonthBinding>() {
 
     companion object {
+        private const val KEY_YEAR = "year"
+        private const val KEY_MONTH = "month"
+
         fun newInstance(year: Int, month: Int) = MonthFragment().apply {
-            arguments = bundleOf("year" to year, "month" to month)
+            arguments = bundleOf(KEY_YEAR to year, KEY_MONTH to month)
         }
     }
 
@@ -26,8 +29,8 @@ class MonthFragment : BaseFragment<FragmentMonthBinding>() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val year = requireArguments().getInt("year")
-        val month = requireArguments().getInt("month")
+        val year = requireArguments().getInt(KEY_YEAR)
+        val month = requireArguments().getInt(KEY_MONTH)
 
         val recycler = binding.recyclerMonth
         recycler.layoutManager = GridLayoutManager(requireContext(), 7)

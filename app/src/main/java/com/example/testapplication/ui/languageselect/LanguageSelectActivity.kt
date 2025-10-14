@@ -29,11 +29,11 @@ class LanguageSelectActivity : BaseActivity<ActivityLanguageSelectBinding>() {
 
         binding.apply {
             btnVietnamese.setOnClickListener {
-                changeLanguage("vi")
+                changeLanguage(LocaleHelper.KEY_LANGUAGE_VI)
             }
 
             btnEnglish.setOnClickListener {
-                changeLanguage("en")
+                changeLanguage(LocaleHelper.KEY_LANGUAGE_ENG)
             }
         }
     }

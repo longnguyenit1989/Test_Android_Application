@@ -6,6 +6,8 @@
     <dimen name="xxx_small_margin">8dp</dimen>
     <dimen name="xx_small_margin">12dp</dimen>
     <dimen name="x_small_margin">16dp</dimen>
+    <dimen name="small_margin">20dp</dimen>
 
     <dimen name="smallest_padding">4dp</dimen>
+    <dimen name="small_padding">20dp</dimen>
 </resources>

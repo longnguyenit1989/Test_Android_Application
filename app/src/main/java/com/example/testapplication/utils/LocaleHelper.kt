@@ -8,6 +8,8 @@ import java.util.Locale
 object LocaleHelper {
 
     private const val LANGUAGE_KEY = "app_language"
+    const val KEY_LANGUAGE_VI = "vi"
+    const val KEY_LANGUAGE_ENG = "en"
 
     fun setLocale(context: Context, language: String): Context {
         saveLanguagePreference(context, language)

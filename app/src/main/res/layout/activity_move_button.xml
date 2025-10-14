@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -69,5 +70,78 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnMove"
         app:layout_constraintTop_toTopOf="@+id/btnMove" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineTop75"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
+    <Button
+        android:id="@+id/btnClickMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/click_me"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineTop75"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop75" />
+
+    <Button
+        android:id="@+id/btn1"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="1"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn2"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="2"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn3"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="3"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn4"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="4"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn5"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="5"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn6"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="6"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn7"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="7"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btn8"
+        style="@style/center_btn_click_me_constrain_layout"
+        android:text="8"
+        android:visibility="invisible"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

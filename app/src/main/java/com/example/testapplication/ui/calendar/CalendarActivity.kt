@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import androidx.viewpager2.widget.ViewPager2
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityCalendarBinding
+import com.example.testapplication.utils.LocaleHelper
 import java.time.format.TextStyle
 import java.util.Locale
 
@@ -27,28 +28,34 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityCalendarBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        initView()
+    }
 
+    private fun initView() {
         adapter = CalendarPagerAdapter(this)
         binding.viewPagerCalendar.adapter = adapter
 
+        var locale = Locale.ENGLISH
+        if (LocaleHelper.getSavedLanguage(this) == LocaleHelper.KEY_LANGUAGE_VI) {
+            locale = Locale.forLanguageTag("vi")
+        }
+
         val currentPos = adapter.itemCount / 2
         binding.viewPagerCalendar.setCurrentItem(currentPos, false)
-        updateMonthTitle(currentPos)
+        updateMonthTitle(currentPos, locale)
 
         binding.viewPagerCalendar.registerOnPageChangeCallback(object :
             ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
-                updateMonthTitle(position)
+                updateMonthTitle(position, locale)
             }
         })
     }
 
     @SuppressLint("SetTextI18n")
-    private fun updateMonthTitle(position: Int) {
+    private fun updateMonthTitle(position: Int, locale: Locale) {
         val ym = adapter.getMonthAt(position)
-        val monthName = ym.month.getDisplayName(TextStyle.SHORT, Locale.ENGLISH).uppercase()
+        val monthName = ym.month.getDisplayName(TextStyle.SHORT, locale).uppercase()
         binding.tvMonthTitle.text = "$monthName ${ym.year}"
     }
 

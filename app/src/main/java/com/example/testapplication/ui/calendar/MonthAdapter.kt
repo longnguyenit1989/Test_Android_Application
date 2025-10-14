@@ -76,12 +76,6 @@ class MonthAdapter(
             holder.binding.tvDayNumber.setTextColor(blackColor)
         }
 
-        if (date == LocalDate.now()) {
-            holder.binding.viewTodayCircle.beVisible()
-        } else {
-            holder.binding.viewTodayCircle.beGone()
-        }
-
         val eventsLayout = holder.binding.llEvents
         eventsLayout.removeAllViews()
 

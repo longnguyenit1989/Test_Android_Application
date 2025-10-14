@@ -8,4 +8,5 @@
     <color name="violet">#673AB7</color>
     <color name="grey">#808080</color>
     <color name="light_grey">#AFACAC</color>
+    <color name="x_light_grey">#FFE0E0E0</color>
 </resources>

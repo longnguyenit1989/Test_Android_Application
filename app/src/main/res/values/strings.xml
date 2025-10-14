@@ -80,7 +80,6 @@
     <string name="auth">Auth</string>
 
     <string name="calendar">Calendar</string>
-
     <string name="sun">Sun</string>
     <string name="mon">Mon</string>
     <string name="tue">Tue</string>
@@ -90,5 +89,7 @@
     <string name="sat">Sat</string>
 
     <string name="go_to_work">Go to work</string>
+
+    <string name="circle">Circle</string>
 
 </resources>
