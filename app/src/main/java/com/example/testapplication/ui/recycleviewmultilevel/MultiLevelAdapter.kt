@@ -1,4 +1,5 @@
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.testapplication.databinding.ItemClassBinding
@@ -19,44 +20,28 @@ class MultiLevelAdapter(private val schools: List<School>) :
         private const val TYPE_TEACHER = 2
     }
 
-    private val displayList = mutableListOf<Any>()
-
-    init {
-        displayList.addAll(schools)
+    private val displayList = mutableListOf<Any>().apply {
+        addAll(schools)
     }
 
-    override fun getItemViewType(position: Int) = when (displayList[position]) {
+    override fun getItemViewType(position: Int): Int = when (displayList[position]) {
         is School -> TYPE_SCHOOL
         is ClassRoom -> TYPE_CLASS
         is Teacher -> TYPE_TEACHER
-        else -> -1
+        else -> error("Invalid item type at position $position")
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        val inflater = LayoutInflater.from(parent.context)
         return when (viewType) {
-            TYPE_SCHOOL -> {
-                val binding =
-                    ItemSchoolBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                SchoolViewHolder(binding)
-            }
-
-            TYPE_CLASS -> {
-                val binding =
-                    ItemClassBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                ClassViewHolder(binding)
-            }
-
-            TYPE_TEACHER -> {
-                val binding =
-                    ItemTeacherBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                TeacherViewHolder(binding)
-            }
-
-            else -> throw IllegalArgumentException("Invalid view type")
+            TYPE_SCHOOL -> SchoolViewHolder(ItemSchoolBinding.inflate(inflater, parent, false))
+            TYPE_CLASS -> ClassViewHolder(ItemClassBinding.inflate(inflater, parent, false))
+            TYPE_TEACHER -> TeacherViewHolder(ItemTeacherBinding.inflate(inflater, parent, false))
+            else -> error("Invalid viewType $viewType")
         }
     }
 
-    override fun getItemCount() = displayList.size
+    override fun getItemCount(): Int = displayList.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (val item = displayList[position]) {
@@ -69,84 +54,87 @@ class MultiLevelAdapter(private val schools: List<School>) :
     inner class SchoolViewHolder(private val binding: ItemSchoolBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(school: School) {
-            binding.tvSchool.text = school.name
-            binding.ivArrow.rotation = if (school.isExpanded) 180f else 0f
+        fun bind(school: School) = with(binding) {
+            tvSchool.text = school.name
+            ivArrow.rotation = if (school.isExpanded) 180f else 0f
 
-            binding.root.setOnClickListener {
-                val pos = displayList.indexOf(school)
-                if (school.isExpanded) collapseSchool(school, pos)
-                else expandSchool(school, pos)
-
-                val to = if (school.isExpanded) 180f else 0f
-                binding.ivArrow.animate().rotation(to).setDuration(300).start()
+            root.setOnClickListener {
+                toggleExpand(school, adapterPosition)
+                ivArrow.animate().rotation(if (school.isExpanded) 180f else 0f).setDuration(200).start()
             }
         }
     }
 
-
     inner class ClassViewHolder(private val binding: ItemClassBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(classRoom: ClassRoom) {
-            binding.tvClass.text = classRoom.name
-            if (classRoom.teachers.isNotEmpty()) {
-                binding.ivArrow.beVisible()
-            } else {
-                binding.ivArrow.beGone()
+        fun bind(classRoom: ClassRoom) = with(binding) {
+            tvClass.text = classRoom.name
+            ivArrow.apply {
+                visibility = if (classRoom.teachers.isNotEmpty()) View.VISIBLE else View.GONE
+                rotation = if (classRoom.isExpanded) 180f else 0f
             }
 
-            binding.ivArrow.rotation = if (classRoom.isExpanded) 180f else 0f
-
-            binding.root.setOnClickListener {
-                val pos = displayList.indexOf(classRoom)
-                if (classRoom.isExpanded) collapseClass(classRoom, pos)
-                else expandClass(classRoom, pos)
-
-                val to = if (classRoom.isExpanded) 180f else 0f
-                binding.ivArrow.animate().rotation(to).setDuration(300).start()
+            root.setOnClickListener {
+                toggleExpand(classRoom, layoutPosition)
+                ivArrow.animate().rotation(if (classRoom.isExpanded) 180f else 0f).setDuration(200).start()
             }
         }
     }
 
     inner class TeacherViewHolder(private val binding: ItemTeacherBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(teacher: Teacher) {
-            binding.tvTeacher.text = teacher.name
+
+        fun bind(teacher: Teacher) = with(binding) {
+            tvTeacher.text = teacher.name
         }
     }
 
-    private fun expandSchool(school: School, position: Int) {
-        school.isExpanded = true
-        displayList.addAll(position + 1, school.classes)
-        notifyItemRangeInserted(position + 1, school.classes.size)
+    private fun toggleExpand(item: Any, position: Int) {
+        when (item) {
+            is School -> {
+                if (item.isExpanded) collapseSchool(item, position)
+                else expandSchool(item, position)
+            }
+            is ClassRoom -> {
+                if (item.isExpanded) collapseClass(item, position)
+                else expandClass(item, position)
+            }
+        }
     }
 
-    private fun collapseSchool(school: School, position: Int) {
+    private fun expandSchool(school: School, pos: Int) {
+        school.isExpanded = true
+        displayList.addAll(pos + 1, school.classes)
+        notifyItemRangeInserted(pos + 1, school.classes.size)
+    }
+
+    private fun collapseSchool(school: School, pos: Int) {
         school.isExpanded = false
-        var removeCount = 0
-        for (c in school.classes) {
-            if (c.isExpanded) {
-                removeCount += c.teachers.size
+
+        val toRemove = buildList {
+            for (c in school.classes) {
+                add(c)
+                if (c.isExpanded) addAll(c.teachers)
                 c.isExpanded = false
             }
-            removeCount++
         }
-        displayList.subList(position + 1, position + 1 + removeCount).clear()
-        notifyItemRangeRemoved(position + 1, removeCount)
+
+        displayList.removeAll(toRemove)
+        notifyItemRangeRemoved(pos + 1, toRemove.size)
     }
 
-    private fun expandClass(classRoom: ClassRoom, position: Int) {
+    private fun expandClass(classRoom: ClassRoom, pos: Int) {
         classRoom.isExpanded = true
-        displayList.addAll(position + 1, classRoom.teachers)
-        notifyItemRangeInserted(position + 1, classRoom.teachers.size)
+        displayList.addAll(pos + 1, classRoom.teachers)
+        notifyItemRangeInserted(pos + 1, classRoom.teachers.size)
     }
 
-    private fun collapseClass(classRoom: ClassRoom, position: Int) {
+    private fun collapseClass(classRoom: ClassRoom, pos: Int) {
         classRoom.isExpanded = false
-        displayList.subList(position + 1, position + 1 + classRoom.teachers.size).clear()
-        notifyItemRangeRemoved(position + 1, classRoom.teachers.size)
+        displayList.subList(pos + 1, pos + 1 + classRoom.teachers.size).clear()
+        notifyItemRangeRemoved(pos + 1, classRoom.teachers.size)
     }
-
 }
+
 

@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
+import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityCalendarBinding
@@ -15,6 +16,8 @@ import java.util.Locale
 class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
 
     private lateinit var adapter: CalendarPagerAdapter
+
+    private val sharedPool = RecyclerView.RecycledViewPool()
 
     companion object {
         fun newIntent(context: Context): Intent {
@@ -34,6 +37,7 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
     private fun initView() {
         adapter = CalendarPagerAdapter(this)
         binding.viewPagerCalendar.adapter = adapter
+        binding.viewPagerCalendar.offscreenPageLimit = 3
 
         var locale = Locale.ENGLISH
         if (LocaleHelper.getSavedLanguage(this) == LocaleHelper.KEY_LANGUAGE_VI) {
