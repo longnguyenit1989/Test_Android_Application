@@ -93,5 +93,13 @@
     <string name="go_to_work">Đi làm</string>
 
     <string name="circle">Hình tròn</string>
+    <string name="percent_25">25%</string>
+    <string name="percent_50">50%</string>
+    <string name="percent_75">75%</string>
+    <string name="percent_100">100%</string>
+    <string name="ras_240">Bk 240</string>
+    <string name="ras_280">Bk 280</string>
+    <string name="ras_320">Bk 320</string>
+    <string name="ras_360">Bk 360</string>
 
 </resources>

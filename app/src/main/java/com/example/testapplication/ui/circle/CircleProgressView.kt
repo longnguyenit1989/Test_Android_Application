@@ -29,7 +29,7 @@ class CircleProgressView @JvmOverloads constructor(
     private val progressPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         strokeWidth = strokeWidthPx
-        color = context.getColor(R.color.light_blue)
+        color = context.getColor(R.color.blue)
         strokeCap = Paint.Cap.ROUND
     }
 

@@ -3,20 +3,16 @@ package com.example.testapplication.ui.draw
 import android.content.ContentValues
 import android.content.Context
 import android.content.Intent
+import android.content.res.ColorStateList
 import android.graphics.Bitmap
-import android.graphics.Color
-import android.graphics.Paint
-import android.graphics.drawable.ClipDrawable
-import android.graphics.drawable.Drawable
-import android.graphics.drawable.LayerDrawable
-import android.graphics.drawable.ShapeDrawable
-import android.graphics.drawable.shapes.RectShape
+import android.graphics.BlendMode
+import android.graphics.BlendModeColorFilter
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.Gravity
 import android.view.LayoutInflater
 import android.widget.SeekBar
 import android.widget.Toast
+import androidx.core.content.ContextCompat
 import com.example.testapplication.R
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityDrawBinding
@@ -40,15 +36,23 @@ class DrawActivity : BaseActivity<ActivityDrawBinding>() {
 
     private fun setUI() {
         binding.apply {
+            val black = ContextCompat.getColor(this@DrawActivity,R.color.black)
+            val red = ContextCompat.getColor(this@DrawActivity,R.color.red)
+            val blue = ContextCompat.getColor(this@DrawActivity,R.color.blue)
+
+            radioBlack.buttonTintList = ColorStateList.valueOf(black)
+            radioRed.buttonTintList = ColorStateList.valueOf(red)
+            radioBlue.buttonTintList = ColorStateList.valueOf(blue)
+
             radioGroupColors.setOnCheckedChangeListener { _, checkedId ->
                 val color = when (checkedId) {
-                    R.id.radioBlack -> Color.BLACK
-                    R.id.radioRed -> Color.RED
-                    R.id.radioBlue -> Color.BLUE
-                    else -> Color.BLACK
+                    R.id.radioBlack -> black
+                    R.id.radioRed -> red
+                    R.id.radioBlue -> blue
+                    else -> black
                 }
                 drawView.setStrokeColor(color)
-                updateSeekBarHeight(seekBarWidth, seekBarWidth.progress, color)
+                updateColorSeekBar(color)
             }
 
             seekBarWidth.setOnSeekBarChangeListener(
@@ -61,10 +65,6 @@ class DrawActivity : BaseActivity<ActivityDrawBinding>() {
                         val strokeWidth = progress.coerceAtLeast(2).toFloat()
                         drawView.setStrokeWidth(strokeWidth)
 
-                        if (seekBar != null) {
-                            val color = drawView.getStrokeColor()
-                            updateSeekBarHeight(seekBar, strokeWidth.toInt(), color)
-                        }
                     }
 
                     override fun onStartTrackingTouch(seekBar: SeekBar?) {}
@@ -90,34 +90,12 @@ class DrawActivity : BaseActivity<ActivityDrawBinding>() {
         }
     }
 
-    private fun updateSeekBarHeight(seekBar: SeekBar, strokeWidth: Int, progressColor: Int) {
-        val barHeight = (strokeWidth / 2).coerceAtLeast(2)
-
-        val backgroundShape = ShapeDrawable(RectShape()).apply {
-            paint.style = Paint.Style.FILL
-            paint.color = Color.LTGRAY
-            intrinsicHeight = barHeight
+    private fun updateColorSeekBar(color: Int) {
+        val colorFilter = BlendModeColorFilter(color, BlendMode.SRC_IN)
+        binding.apply {
+            seekBarWidth.progressDrawable.colorFilter = colorFilter
+            seekBarWidth.thumb.colorFilter = colorFilter
         }
-
-        val progressShape = ShapeDrawable(RectShape()).apply {
-            paint.style = Paint.Style.FILL
-            paint.color = progressColor
-            intrinsicHeight = barHeight
-        }
-
-        val progressClip = ClipDrawable(progressShape, Gravity.START, ClipDrawable.HORIZONTAL)
-
-        val layers = arrayOf<Drawable>(backgroundShape, progressClip)
-        val layerDrawable = LayerDrawable(layers).apply {
-            setId(0, android.R.id.background)
-            setId(1, android.R.id.progress)
-        }
-
-        seekBar.progressDrawable = layerDrawable
-
-        val params = seekBar.layoutParams
-        params.height = barHeight * 3
-        seekBar.layoutParams = params
     }
 
     private fun saveDrawingToGallery() {

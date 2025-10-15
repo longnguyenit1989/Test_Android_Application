@@ -32,6 +32,11 @@ class CircleActivity : BaseActivity<ActivityCircleBinding>() {
             btn100.setOnClickListener { circleProgress.setProgressAnimated(100f) }
 
             circleProgress.setProgressInstant(0f)
+
+            btnRadius240.setOnClickListener { radarView.setRadarRadius(240F) }
+            btnRadius280.setOnClickListener { radarView.setRadarRadius(280F) }
+            btnRadius320.setOnClickListener { radarView.setRadarRadius(320F) }
+            btnRadius360.setOnClickListener { radarView.setRadarRadius(360F) }
         }
     }
 }

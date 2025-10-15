@@ -9,5 +9,10 @@
     <dimen name="small_margin">20dp</dimen>
 
     <dimen name="smallest_padding">4dp</dimen>
+    <dimen name="xxx_small_padding">8dp</dimen>
+    <dimen name="xx_small_padding">12dp</dimen>
     <dimen name="small_padding">20dp</dimen>
+
+    <dimen name="small_text_size">12sp</dimen>
+
 </resources>

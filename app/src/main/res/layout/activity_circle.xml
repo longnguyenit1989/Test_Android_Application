@@ -12,6 +12,59 @@
         android:layout_width="250dp"
         android:layout_height="250dp" />
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnRadius240"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/ras_240"
+            android:textSize="@dimen/small_text_size" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/btnRadius280"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/ras_280"
+            android:textSize="@dimen/small_text_size" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/btnRadius320"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/ras_320"
+            android:textSize="@dimen/small_text_size" />
+
+        <Space
+            android:layout_width="8dp"
+            android:layout_height="0dp" />
+
+        <Button
+            android:id="@+id/btnRadius360"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_weight="1"
+            android:text="@string/ras_360"
+            android:textSize="@dimen/small_text_size" />
+
+    </LinearLayout>
+
     <com.example.testapplication.ui.circle.CircleProgressView
         android:id="@+id/circleProgress"
         android:layout_width="200dp"
@@ -25,7 +78,7 @@
         android:id="@+id/buttonsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="@dimen/small_margin"
         android:gravity="center"
         android:orientation="horizontal">
 
@@ -34,7 +87,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="25%" />
+            android:text="@string/percent_25" />
 
         <Space
             android:layout_width="8dp"
@@ -45,7 +98,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="50%" />
+            android:text="@string/percent_50" />
 
         <Space
             android:layout_width="8dp"
@@ -56,7 +109,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="75%" />
+            android:text="@string/percent_75" />
 
         <Space
             android:layout_width="8dp"
@@ -67,7 +120,7 @@
             android:layout_width="0dp"
             android:layout_height="48dp"
             android:layout_weight="1"
-            android:text="100%" />
+            android:text="@string/percent_100" />
 
     </LinearLayout>
 

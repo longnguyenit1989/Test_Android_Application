@@ -125,4 +125,10 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             dots.add(x to y)
         }
     }
+
+    fun setRadarRadius(radius: Float) {
+        radarRadius = radius
+        invalidate()
+    }
+
 }

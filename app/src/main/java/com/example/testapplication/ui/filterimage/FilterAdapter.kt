@@ -21,7 +21,7 @@ class FilterAdapter(
             binding.tvFilterName.text = item.name
             if (item.isSelected == true) {
                 binding.tvFilterName.setTextColor(
-                    ContextCompat.getColor(binding.root.context, R.color.light_blue)
+                    ContextCompat.getColor(binding.root.context, R.color.blue)
                 )
             } else {
                 binding.tvFilterName.setTextColor(

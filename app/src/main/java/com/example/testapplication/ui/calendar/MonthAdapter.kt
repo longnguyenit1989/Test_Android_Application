@@ -51,7 +51,7 @@ class MonthAdapter(
     override fun onBindViewHolder(holder: DayViewHolder, position: Int) {
         val redColor = holder.binding.root.context.getColor(R.color.red)
         val blackColor = holder.binding.root.context.getColor(R.color.black)
-        val blueColor = holder.binding.root.context.getColor(R.color.light_blue)
+        val blueColor = holder.binding.root.context.getColor(R.color.blue)
         val violetColor = holder.binding.root.context.getColor(R.color.violet)
         val whiteColor = holder.binding.root.context.getColor(R.color.white)
 
