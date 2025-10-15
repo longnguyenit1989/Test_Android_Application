@@ -102,4 +102,9 @@
     <string name="ras_320">Bk 320</string>
     <string name="ras_360">Bk 360</string>
 
+    <string name="events">Sự kiện</string>
+    <string name="not_events">Không có sự kiện</string>
+    <string name="solar_date">Ngày dương lịch</string>
+    <string name="lunar_date">Ngày âm lịch</string>
+    <string name="close">Đóng</string>
 </resources>

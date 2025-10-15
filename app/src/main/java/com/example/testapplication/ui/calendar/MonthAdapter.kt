@@ -1,6 +1,7 @@
 package com.example.testapplication.ui.calendar
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.graphics.drawable.GradientDrawable
 import android.text.TextUtils
 import android.view.Gravity
@@ -13,6 +14,7 @@ import com.example.testapplication.R
 import com.example.testapplication.databinding.ItemDayBinding
 import com.example.testapplication.extension.beGone
 import com.example.testapplication.extension.beVisible
+import com.example.testapplication.extension.setTextSizeFloat
 import com.example.testapplication.utils.LunarCalendar
 import java.time.DayOfWeek
 import java.time.LocalDate
@@ -109,9 +111,82 @@ class MonthAdapter(
                 eventsLayout.addView(event)
             }
         }
+
+        holder.binding.root.setOnClickListener {
+            showDayDetailDialog(holder, date, lunar)
+        }
     }
 
     class DayViewHolder(val binding: ItemDayBinding) : RecyclerView.ViewHolder(binding.root)
+
+    @SuppressLint("SetTextI18n")
+    private fun showDayDetailDialog(holder: DayViewHolder, date: LocalDate, lunar: Pair<Int, Int>) {
+        val context = holder.binding.root.context
+        val builder = AlertDialog.Builder(context)
+
+        val blackColor = context.getColor(R.color.black)
+        val blueColor = context.getColor(R.color.blue)
+        val greyColor = context.getColor(R.color.grey)
+
+        val mediumTextSizePx = context.resources.getDimension(R.dimen.x_medium_text_size)
+        val smallTextSizePx = context.resources.getDimension(R.dimen.small_text_size)
+
+        val layout = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+            setPadding(40, 40, 40, 40)
+        }
+
+        val solarText = TextView(context).apply {
+            text =
+                "📅 ${context.getString(R.string.solar_date)}: ${date.dayOfMonth}/${date.monthValue}/${date.year}"
+            setTextColor(blackColor)
+        }
+        solarText.setTextSizeFloat(mediumTextSizePx)
+
+        val lunarText = TextView(context).apply {
+            text = "🌙 ${context.getString(R.string.lunar_date)}: ${lunar.second}/${lunar.first}"
+            setTextColor(greyColor)
+        }
+        lunarText.setTextSizeFloat(mediumTextSizePx)
+
+        layout.addView(solarText)
+        layout.addView(lunarText)
+
+        val events = mutableListOf<String>()
+        if (date.dayOfWeek in DayOfWeek.MONDAY..DayOfWeek.FRIDAY && date.dayOfMonth % 2 == 0) {
+            events.add(context.getString(R.string.go_to_work))
+        }
+
+        if (events.isNotEmpty()) {
+            val title = TextView(context).apply {
+                text = "\n📌 ${context.getString(R.string.events)}"
+                setTextColor(blackColor)
+            }
+            title.setTextSizeFloat(smallTextSizePx)
+            layout.addView(title)
+
+            events.forEach { e ->
+                val eventView = TextView(context).apply {
+                    text = "• $e"
+                    setTextColor(blueColor)
+                }
+                eventView.setTextSizeFloat(smallTextSizePx)
+                layout.addView(eventView)
+            }
+        } else {
+            val noneView = TextView(context).apply {
+                text = "\n(⛱ ${context.getString(R.string.not_events)})"
+                setTextColor(greyColor)
+            }
+            noneView.setTextSizeFloat(smallTextSizePx)
+            layout.addView(noneView)
+        }
+
+        builder.setView(layout)
+        builder.setPositiveButton(context.getString(R.string.close)) { dialog, _ -> dialog.dismiss() }
+        builder.show()
+    }
+
 }
 
 
