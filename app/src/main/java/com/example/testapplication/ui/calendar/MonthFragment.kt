@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.recyclerview.widget.GridLayoutManager
 import com.example.testapplication.R
@@ -30,6 +31,8 @@ class MonthFragment : BaseFragment<FragmentMonthBinding>() {
     companion object {
         private const val KEY_YEAR = "year"
         private const val KEY_MONTH = "month"
+        private const val THICK_NESS_STROKE = 1
+        private const val SPAN_COUNT = 7
 
         fun newInstance(year: Int, month: Int) = MonthFragment().apply {
             arguments = bundleOf(KEY_YEAR to year, KEY_MONTH to month)
@@ -50,8 +53,15 @@ class MonthFragment : BaseFragment<FragmentMonthBinding>() {
         binding.recyclerMonth.apply {
             layoutManager = GridLayoutManager(requireContext(), 7)
             adapter = monthAdapter
-            addItemDecoration(GridDividerDecoration(R.color.grey, 1))
+            addItemDecoration(
+                GridDividerDecoration(
+                    ContextCompat.getColor(context, R.color.grey),
+                    THICK_NESS_STROKE,
+                    SPAN_COUNT
+                )
+            )
         }
+
 
         val days = CalendarCache.getOrGenerate(year, month) {
             generateDays(year, month)
