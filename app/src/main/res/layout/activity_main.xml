@@ -95,6 +95,12 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="@string/circle" />
 
+        <Button
+            android:id="@+id/btnPortraitAndLandscape"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/portrait_and_landscape" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

@@ -1,18 +1,9 @@
 package com.example.testapplication.ui
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
-import android.animation.AnimatorSet
-import android.animation.ObjectAnimator
 import android.os.Bundle
-import android.util.Property
 import android.view.LayoutInflater
-import android.view.View
-import android.view.animation.AccelerateInterpolator
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
-import com.example.testapplication.extension.beGone
-import com.example.testapplication.extension.beVisible
 import com.example.testapplication.ui.biometric.BiometricActivity
 import com.example.testapplication.ui.calendar.CalendarActivity
 import com.example.testapplication.ui.canvas.CoordinateActivity
@@ -23,6 +14,7 @@ import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.languageselect.LanguageSelectActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
+import com.example.testapplication.ui.portraitandlandscape.PortraitAndLandscapeActivity
 import com.example.testapplication.ui.recycleviewmultilevel.RecycleViewMultiLevelActivity
 import com.example.testapplication.ui.recycleviewswipe.RecycleViewSwipeActivity
 import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
@@ -95,6 +87,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnCircle.setOnClickListener {
                 startActivity(CircleActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnPortraitAndLandscape.setOnClickListener {
+                startActivity(PortraitAndLandscapeActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

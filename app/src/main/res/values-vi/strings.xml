@@ -107,4 +107,8 @@
     <string name="solar_date">Ngày dương lịch</string>
     <string name="lunar_date">Ngày âm lịch</string>
     <string name="close">Đóng</string>
+
+    <string name="portrait_and_landscape">Màn hình ngang dọc</string>
+    <string name="recycler_view_portrait">RecyclerView dọc</string>
+    <string name="recycler_view_landscape">RecyclerView ngang</string>
 </resources>

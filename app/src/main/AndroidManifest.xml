@@ -54,6 +54,10 @@
         <activity android:name=".ui.circle.CircleActivity"/>
 
         <activity
+            android:name=".ui.portraitandlandscape.PortraitAndLandscapeActivity"
+            android:exported="true" />
+
+        <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.MyUCrop"
             tools:replace="android:theme" />

@@ -104,6 +104,9 @@
     <string name="not_events">No has events</string>
     <string name="solar_date">Solar date</string>
     <string name="lunar_date">Lunar date</string>
-
     <string name="close">Close</string>
+
+    <string name="portrait_and_landscape">Portrait And Landscape</string>
+    <string name="recycler_view_portrait">RecyclerView portrait</string>
+    <string name="recycler_view_landscape">RecyclerView landscape</string>
 </resources>
