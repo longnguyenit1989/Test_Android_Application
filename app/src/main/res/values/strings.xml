@@ -13,6 +13,13 @@
     <string name="filter_image">Filter image</string>
     <string name="choose_image">Choose image</string>
     <string name="choose_crop_image">Choose crop image</string>
+    <string name="download_image">Download image</string>
+    <string name="insert_url_image">Insert url image</string>
+    <string name="image_after_download">Image after download</string>
+    <string name="download_success_image">Download success image !</string>
+    <string name="cannot_download_image">Cannot download image</string>
+    <string name="downloading">Downloading</string>
+
     <string name="capture_images">Capture images</string>
     <string name="search_tag">Search tag</string>
     <string name="language_select">Language select</string>

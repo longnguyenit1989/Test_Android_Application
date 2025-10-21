@@ -50,6 +50,9 @@ dependencies {
     implementation(libs.ucrop)
     implementation(libs.biometric)
     implementation(libs.securityCrypto)
+    implementation(libs.okhttp)
+    implementation(libs.okhttp.logging.interceptor)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

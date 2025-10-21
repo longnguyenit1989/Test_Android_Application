@@ -13,6 +13,7 @@ import com.example.testapplication.ui.calendar.CalendarActivity
 import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActivity
 import com.example.testapplication.ui.circle.CircleActivity
+import com.example.testapplication.ui.downloadimage.DownloadImageActivity
 import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.languageselect.LanguageSelectActivity
@@ -29,10 +30,6 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
         const val DEEP_LINK_KEY = "deeplink_key"
         private const val KEY = "key"
         private const val PATH_CALENDAR = "/calendar"
-
-        fun newIntent(context: Context): Intent {
-            return Intent(context, MainActivity::class.java)
-        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,6 +44,7 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
     override fun onNewIntent(intent: Intent?) {
         super.onNewIntent(intent)
+        // When MainActivity already exists and receives a new intent, the user clicks a deep link ⇒ the flow goes here
         handleDeepLink(intent)
     }
 
@@ -99,6 +97,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnChooseAndCropImage.setOnClickListener {
                 startActivity(ChooseAndCropImageActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnDownloadImage.setOnClickListener {
+                startActivity(DownloadImageActivity.Companion.newIntent(this@MainActivity))
             }
 
             btnChooseLanguage.setOnClickListener {

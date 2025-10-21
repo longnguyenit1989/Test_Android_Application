@@ -66,6 +66,12 @@
             android:text="@string/choose_crop_image" />
 
         <Button
+            android:id="@+id/btnDownloadImage"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/download_image" />
+
+        <Button
             android:id="@+id/btnSearchTag"
             style="@style/button_default"
             android:layout_marginTop="@dimen/small_margin"

@@ -16,6 +16,7 @@ glide = "5.0.5"
 ucrop = "2.2.10"
 biometric = "1.1.0"
 securityCrypto = "1.1.0-alpha06"
+okhttp = "4.11.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -33,6 +34,9 @@ glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "gli
 ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
 biometric = {group = "androidx.biometric", name = "biometric", version.ref = "biometric"}
 securityCrypto = {group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto"}
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
 
 
 [plugins]

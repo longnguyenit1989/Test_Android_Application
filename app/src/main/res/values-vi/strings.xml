@@ -14,6 +14,13 @@
     <string name="filter_image">Ảnh Filter</string>
     <string name="choose_image">Chọn ảnh</string>
     <string name="choose_crop_image">Chọn và cắt image</string>
+    <string name="download_image">Download ảnh</string>
+    <string name="insert_url_image">Nhập url ảnh</string>
+    <string name="image_after_download">Ảnh sau khi tải</string>
+    <string name="download_success_image">Download ảnh thành công !</string>
+    <string name="cannot_download_image">Không thể download ảnh</string>
+    <string name="downloading">Đang tải</string>
+
     <string name="capture_images">Chụp ảnh</string>
     <string name="search_tag">Tìm theo tag</string>
     <string name="language_select">Chọn ngôn ngữ</string>
