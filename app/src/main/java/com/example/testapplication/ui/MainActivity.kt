@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
 import com.example.testapplication.ui.biometric.BiometricActivity
+import com.example.testapplication.ui.broadcast_receiver.BroadcastReceiverActivity
 import com.example.testapplication.ui.calendar.CalendarActivity
 import com.example.testapplication.ui.canvas.CoordinateActivity
 import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActivity
@@ -91,6 +92,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnPortraitAndLandscape.setOnClickListener {
                 startActivity(PortraitAndLandscapeActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnBroadcastReceiver.setOnClickListener {
+                startActivity(BroadcastReceiverActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

@@ -109,4 +109,14 @@
     <string name="portrait_and_landscape">Portrait And Landscape</string>
     <string name="recycler_view_portrait">RecyclerView portrait</string>
     <string name="recycler_view_landscape">RecyclerView landscape</string>
+
+    <string name="broadcast_receiver">Broadcast receiver</string>
+
+    <string name="is_on">On</string>
+    <string name="is_off">Off</string>
+    <string name="wifi_status">Status Wi-Fi: %1$s</string>
+    <string name="on_off_wifi">On/Off Wi-Fi</string>
+    <string name="back_to_broadcast_receiver_screen">Back to Broadcast Receiver Screen</string>
+    <string name="back_to_main">Back to Main</string>
+    <string name="go_to_a">Go to A screen</string>
 </resources>

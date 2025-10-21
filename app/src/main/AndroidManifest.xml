@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
         android:allowBackup="true"
@@ -25,37 +27,39 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".ui.map.MapActivity"/>
+        <activity android:name=".ui.map.MapActivity" />
 
-        <activity android:name=".ui.canvas.CoordinateActivity"/>
+        <activity android:name=".ui.canvas.CoordinateActivity" />
 
-        <activity android:name=".ui.movebutton.MoveButtonActivity"/>
+        <activity android:name=".ui.movebutton.MoveButtonActivity" />
 
-        <activity android:name=".ui.draw.DrawActivity"/>
+        <activity android:name=".ui.draw.DrawActivity" />
 
-        <activity android:name=".ui.filterimage.FilterImageActivity"/>
+        <activity android:name=".ui.filterimage.FilterImageActivity" />
 
-        <activity android:name=".ui.recycleviewtouch.RecycleViewTouchActivity"/>
+        <activity android:name=".ui.recycleviewtouch.RecycleViewTouchActivity" />
 
-        <activity android:name=".ui.recycleviewswipe.RecycleViewSwipeActivity"/>
+        <activity android:name=".ui.recycleviewswipe.RecycleViewSwipeActivity" />
 
-        <activity android:name=".ui.recycleviewmultilevel.RecycleViewMultiLevelActivity"/>
+        <activity android:name=".ui.recycleviewmultilevel.RecycleViewMultiLevelActivity" />
 
-        <activity android:name=".ui.searchtag.SearchTagActivity"/>
+        <activity android:name=".ui.searchtag.SearchTagActivity" />
 
-        <activity android:name=".ui.chooseandcropimage.ChooseAndCropImageActivity"/>
+        <activity android:name=".ui.chooseandcropimage.ChooseAndCropImageActivity" />
 
-        <activity android:name=".ui.languageselect.LanguageSelectActivity"/>
+        <activity android:name=".ui.languageselect.LanguageSelectActivity" />
 
-        <activity android:name=".ui.biometric.BiometricActivity"/>
+        <activity android:name=".ui.biometric.BiometricActivity" />
 
-        <activity android:name=".ui.calendar.CalendarActivity"/>
+        <activity android:name=".ui.calendar.CalendarActivity" />
 
-        <activity android:name=".ui.circle.CircleActivity"/>
+        <activity android:name=".ui.circle.CircleActivity" />
 
-        <activity
-            android:name=".ui.portraitandlandscape.PortraitAndLandscapeActivity"
-            android:exported="true" />
+        <activity android:name=".ui.portraitandlandscape.PortraitAndLandscapeActivity" />
+
+        <activity android:name=".ui.broadcast_receiver.BroadcastReceiverActivity" />
+
+        <activity android:name=".ui.broadcast_receiver.ScreenAActivity" />
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
@@ -64,7 +68,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAsIVtswkELFXpUs52b6AwTrtkdh2l0OPk"/>
+            android:value="AIzaSyAsIVtswkELFXpUs52b6AwTrtkdh2l0OPk" />
 
         <provider
             android:name="androidx.core.content.FileProvider"

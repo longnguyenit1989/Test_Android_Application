@@ -111,4 +111,14 @@
     <string name="portrait_and_landscape">Màn hình ngang dọc</string>
     <string name="recycler_view_portrait">RecyclerView dọc</string>
     <string name="recycler_view_landscape">RecyclerView ngang</string>
+
+    <string name="broadcast_receiver">Broadcast lắng nghe</string>
+
+    <string name="is_on">Đang bật</string>
+    <string name="is_off">Đang tắt</string>
+    <string name="wifi_status">Trạng thái Wi-Fi: %1$s</string>
+    <string name="on_off_wifi">Bật/Tắt Wi-Fi</string>
+    <string name="back_to_broadcast_receiver_screen">Về màn hình Broadcast Receiver</string>
+    <string name="back_to_main">Về màn hình Main</string>
+    <string name="go_to_a">Đến màn hình A</string>
 </resources>
