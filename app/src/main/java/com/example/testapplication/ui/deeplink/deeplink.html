@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Deep Link</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            padding: 40px;
+            text-align: center;
+        }
+        a {
+            display: inline-block;
+            padding: 15px 25px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Deep Link</h1>
+    <p>Click button below to open CalendarActivity in app:</p>
+    <a href="#" onclick="openApp()">Open Calendar</a>
+
+    <script>
+        function openApp() {
+            const deepLink = "myapp://open/calendar?key=event_45";
+            window.location = deepLink;
+
+            setTimeout(() => {
+                window.location = "https://www.example.com/calendar?key=event_45";
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

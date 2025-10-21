@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityCalendarBinding
+import com.example.testapplication.ui.MainActivity.Companion.DEEP_LINK_KEY
 import com.example.testapplication.utils.LocaleHelper
 import java.time.format.TextStyle
 import java.util.Locale
@@ -22,6 +23,12 @@ class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
     companion object {
         fun newIntent(context: Context): Intent {
             return Intent(context, CalendarActivity::class.java)
+        }
+
+        fun newIntentWithKey(context: Context, key: String?): Intent {
+            return Intent(context, CalendarActivity::class.java).apply {
+                putExtra(DEEP_LINK_KEY, key)
+            }
         }
     }
 

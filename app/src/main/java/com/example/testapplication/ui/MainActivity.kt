@@ -1,5 +1,8 @@
 package com.example.testapplication.ui
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import com.example.testapplication.base.BaseActivity
@@ -22,14 +25,38 @@ import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
 import com.example.testapplication.ui.searchtag.SearchTagActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
+    companion object {
+        const val DEEP_LINK_KEY = "deeplink_key"
+        private const val KEY = "key"
+        private const val PATH_CALENDAR = "/calendar"
+
+        fun newIntent(context: Context): Intent {
+            return Intent(context, MainActivity::class.java)
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setupUi()
+        handleDeepLink(intent)
     }
 
     override fun inflateBinding(inflater: LayoutInflater): ActivityMainBinding {
         return ActivityMainBinding.inflate(inflater)
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        handleDeepLink(intent)
+    }
+
+    private fun handleDeepLink(intent: Intent?) {
+        val uri: Uri? = intent?.data
+        if (uri != null && uri.path == PATH_CALENDAR) {
+            val key = uri.getQueryParameter(KEY)
+            val calendarIntent = CalendarActivity.newIntentWithKey(this, key ?: "")
+            startActivity(calendarIntent)
+        }
     }
 
     private fun setupUi() {
