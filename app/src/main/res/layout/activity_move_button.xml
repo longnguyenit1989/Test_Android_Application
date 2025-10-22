@@ -1,17 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
+    <androidx.constraintlayout.motion.widget.MotionLayout
+        android:id="@+id/motionLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="@dimen/xxx_small_padding"
+        app:layoutDescription="@xml/motion_scene"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineTop35"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:id="@+id/ballContainer"
+            android:layout_width="100dp"
+            android:layout_height="100dp">
+
+            <ImageView
+                android:id="@+id/ivBall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/move"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_ball" />
+
+            <TextView
+                android:id="@+id/tvClickMe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/click_me"
+                android:textColor="@android:color/white" />
+
+        </FrameLayout>
+
+    </androidx.constraintlayout.motion.widget.MotionLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop15"
+        android:id="@+id/guidelineTop35"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.35" />
 
     <View
         android:id="@+id/borderView"
@@ -20,7 +55,7 @@
         android:background="@drawable/bg_red_border_stroke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop15" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop35" />
 
     <View
         android:id="@+id/borderView1"
@@ -29,7 +64,7 @@
         android:background="@drawable/bg_red_border_stroke"
         app:layout_constraintEnd_toStartOf="@+id/borderView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop15" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop35" />
 
     <View
         android:id="@+id/borderView2"
@@ -38,7 +73,7 @@
         android:background="@drawable/bg_red_border_stroke"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/borderView"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop15" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop35" />
 
     <Button
         android:id="@+id/btnMove"
@@ -72,21 +107,21 @@
         app:layout_constraintTop_toTopOf="@+id/btnMove" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTop75"
+        android:id="@+id/guidelineTop80"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintGuide_percent="0.8" />
 
     <Button
         android:id="@+id/btnClickMe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/click_me"
-        app:layout_constraintBottom_toBottomOf="@+id/guidelineTop75"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineTop80"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTop75" />
+        app:layout_constraintTop_toTopOf="@+id/guidelineTop80" />
 
     <Button
         android:id="@+id/btn1"

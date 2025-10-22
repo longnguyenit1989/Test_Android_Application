@@ -5,7 +5,6 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
-import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityCalendarBinding
@@ -17,8 +16,6 @@ import java.util.Locale
 class CalendarActivity : BaseActivity<ActivityCalendarBinding>() {
 
     private lateinit var adapter: CalendarPagerAdapter
-
-    private val sharedPool = RecyclerView.RecycledViewPool()
 
     companion object {
         fun newIntent(context: Context): Intent {

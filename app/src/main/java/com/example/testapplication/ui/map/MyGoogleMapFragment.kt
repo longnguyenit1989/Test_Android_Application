@@ -64,7 +64,6 @@ class MyGoogleMapFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
-
     private val listLocationDummy = listOf(
         LatLng(21.052171, 105.8365053),
         LatLng(21.0641963, 105.8075825),

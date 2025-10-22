@@ -108,7 +108,6 @@ class MoveButtonActivity: BaseActivity<ActivityMoveButtonBinding>() {
                 toggleButtonPosition(btnClickMe2, borderView2)
             }
 
-
             btnClickMe.setOnClickListener {
                 if (!buttonsVisible) {
                     showButtons()
@@ -116,6 +115,17 @@ class MoveButtonActivity: BaseActivity<ActivityMoveButtonBinding>() {
                     hideButtons()
                 }
                 buttonsVisible = !buttonsVisible
+            }
+
+            ballContainer.setOnClickListener {
+                val progress = motionLayout.progress
+                when (progress) {
+                    0f -> motionLayout.transitionToEnd()
+                    1f -> motionLayout.transitionToStart()
+                    else -> {
+                        // animation is running → do nothing
+                    }
+                }
             }
         }
     }
