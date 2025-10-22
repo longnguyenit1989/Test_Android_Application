@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityMainBinding
+import com.example.testapplication.ui.analogclockview.AnalogClockActivity
 import com.example.testapplication.ui.biometric.BiometricActivity
 import com.example.testapplication.ui.broadcast_receiver.BroadcastReceiverActivity
 import com.example.testapplication.ui.calendar.CalendarActivity
@@ -130,6 +131,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnWebsocketChat.setOnClickListener {
                 startActivity(WebSocketChatActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnAnalogClock.setOnClickListener {
+                startActivity(AnalogClockActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

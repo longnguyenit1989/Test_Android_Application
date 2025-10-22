@@ -18,6 +18,16 @@ class MyGoogleMapFragment : Fragment(), OnMapReadyCallback {
     private var googleMapHelper: GoogleMapHelper? = null
     private var supportMapFragment = SupportMapFragment.newInstance()
 
+    private val listLocationDummy = listOf(
+        LatLng(21.052171, 105.8365053),
+        LatLng(21.0641963, 105.8075825),
+        LatLng(21.056500, 105.830200),
+        LatLng(21.060700, 105.820500),
+        LatLng(21.058200, 105.812900),
+        LatLng(21.062800, 105.834400),
+        LatLng(21.067500, 105.817000)
+    )
+
     override fun onMapReady(p0: GoogleMap) {
         googleMapHelper = GoogleMapHelper(requireActivity(),p0)
         Handler(Looper.getMainLooper()).postDelayed({
@@ -63,14 +73,4 @@ class MyGoogleMapFragment : Fragment(), OnMapReadyCallback {
             }
         }
     }
-
-    private val listLocationDummy = listOf(
-        LatLng(21.052171, 105.8365053),
-        LatLng(21.0641963, 105.8075825),
-        LatLng(21.056500, 105.830200),
-        LatLng(21.060700, 105.820500),
-        LatLng(21.058200, 105.812900),
-        LatLng(21.062800, 105.834400),
-        LatLng(21.067500, 105.817000)
-    )
 }

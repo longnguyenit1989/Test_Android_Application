@@ -102,6 +102,12 @@
             android:text="@string/circle" />
 
         <Button
+            android:id="@+id/btnAnalogClock"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/analog_clock" />
+
+        <Button
             android:id="@+id/btnPortraitAndLandscape"
             style="@style/button_default"
             android:layout_marginTop="@dimen/small_margin"

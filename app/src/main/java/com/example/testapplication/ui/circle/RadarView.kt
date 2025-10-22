@@ -3,32 +3,41 @@ package com.example.testapplication.ui.circle
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
-import android.graphics.*
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.RadialGradient
+import android.graphics.Shader
+import android.graphics.SweepGradient
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
+import androidx.core.graphics.withRotation
+import com.example.testapplication.R
 import kotlin.math.cos
 import kotlin.math.min
 import kotlin.math.sin
 import kotlin.random.Random
-import androidx.core.graphics.withRotation
-import com.example.testapplication.R
 
-class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null) :
-    View(context, attrs) {
+class RadarView @JvmOverloads constructor(
+    context: Context,
+    attrs: AttributeSet? = null
+) : View(context, attrs) {
 
     private var radarRadius = 0f
     private var sweepAngle = 0f
 
+    private val radarColor = Color.rgb(0, 255, 0)
+
     private val radarPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
-        shader = null
     }
 
     private val borderPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.STROKE
         strokeWidth = 3f
-        color = Color.argb(100, 0, 255, 0)
+        color = ColorUtils.setAlphaComponent(radarColor, 100)
     }
 
     private val dotPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -42,20 +51,14 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
         duration = 4000L
         repeatCount = ValueAnimator.INFINITE
         addUpdateListener {
-            val newAngle = it.animatedValue as Float
-
-            if (sweepAngle > newAngle) {
-                generateRandomDots()
-            }
-
-            sweepAngle = newAngle
+            sweepAngle = it.animatedValue as Float
             invalidate()
         }
     }
 
     init {
-        animator.start()
         generateRandomDots()
+        animator.start()
     }
 
     override fun onDetachedFromWindow() {
@@ -66,6 +69,7 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
         radarRadius = min(w, h) / 2f * 0.8f
+        generateRandomDots()
     }
 
     @SuppressLint("DrawAllocation")
@@ -76,7 +80,10 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
         val gradient = RadialGradient(
             cx, cy, radarRadius,
-            intArrayOf(Color.argb(80, 0, 255, 0), Color.argb(10, 0, 255, 0)),
+            intArrayOf(
+                ColorUtils.setAlphaComponent(radarColor, 80),
+                ColorUtils.setAlphaComponent(radarColor, 10)
+            ),
             floatArrayOf(0.5f, 1f),
             Shader.TileMode.CLAMP
         )
@@ -87,7 +94,10 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
         val sweepGradient = SweepGradient(
             cx, cy,
-            intArrayOf(Color.TRANSPARENT, Color.argb(200, 0, 255, 0)),
+            intArrayOf(
+                Color.TRANSPARENT,
+                ColorUtils.setAlphaComponent(radarColor, 200)
+            ),
             floatArrayOf(0f, 1f)
         )
         val sweepPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
@@ -111,9 +121,8 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
             style = Paint.Style.FILL
             color = ContextCompat.getColor(context, R.color.red)
         }
-        canvas.drawCircle(cx, cy, 10f, centerPaint) // bán kính 10px
+        canvas.drawCircle(cx, cy, 10f, centerPaint)
     }
-
 
     private fun generateRandomDots() {
         dots.clear()
@@ -128,7 +137,9 @@ class RadarView @JvmOverloads constructor(context: Context, attrs: AttributeSet?
 
     fun setRadarRadius(radius: Float) {
         radarRadius = radius
+        generateRandomDots()
         invalidate()
     }
-
 }
+
+

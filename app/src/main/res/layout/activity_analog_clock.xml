@@ -1,0 +1,16 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.testapplication.ui.analogclockview.AnalogClockView
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_gravity="center"
+        app:clockColorCircle="@color/clock_circle"
+        app:clockColorHour="@color/clock_hour_hand"
+        app:clockColorMinute="@color/clock_minute_hand"
+        app:clockColorSecond="@color/clock_second_hand"
+        app:clockColorText="@color/clock_text"
+        app:clockShowNumbers="true" />
+</FrameLayout>

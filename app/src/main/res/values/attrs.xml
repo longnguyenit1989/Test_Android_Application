@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AnalogClockView">
+        <attr name="clockColorCircle" format="color" />
+        <attr name="clockColorHour" format="color" />
+        <attr name="clockColorMinute" format="color" />
+        <attr name="clockColorSecond" format="color" />
+        <attr name="clockColorText" format="color" />
+        <attr name="clockShowNumbers" format="boolean" />
+    </declare-styleable>
+</resources>

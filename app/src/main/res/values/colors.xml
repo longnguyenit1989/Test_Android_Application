@@ -10,4 +10,12 @@
     <color name="grey">#808080</color>
     <color name="light_grey">#AFACAC</color>
     <color name="x_light_grey">#FFE0E0E0</color>
+
+    <color name="clock_circle">#424242</color>
+    <color name="clock_hour_hand">#000000</color>
+    <color name="clock_minute_hand">#333333</color>
+    <color name="clock_second_hand">#E53935</color>
+    <color name="clock_text">#212121</color>
+    <color name="clock_gradient_center">#F5F5F5</color>
+    <color name="clock_gradient_edge">#E0E0E0</color>
 </resources>
