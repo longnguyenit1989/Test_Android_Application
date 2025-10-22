@@ -126,4 +126,10 @@
     <string name="back_to_broadcast_receiver_screen">Back to Broadcast Receiver Screen</string>
     <string name="back_to_main">Back to Main</string>
     <string name="go_to_a">Go to A screen</string>
+
+    <string name="send">Send</string>
+    <string name="input_message">Input message</string>
+    <string name="connect_websocket_open">Connect websocket open</string>
+    <string name="error">Error</string>
+    <string name="chat_websocket">Chat websocket</string>
 </resources>

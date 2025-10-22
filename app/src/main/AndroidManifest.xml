@@ -81,7 +81,9 @@
 
         <activity android:name=".ui.broadcast_receiver.ScreenAActivity" />
 
-        <activity android:name=".ui.downloadimage.DownloadImageActivity"/>
+        <activity android:name=".ui.downloadimage.DownloadImageActivity" />
+
+        <activity android:name=".ui.websocketchat.WebSocketChatActivity" />
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"

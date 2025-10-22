@@ -113,6 +113,12 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="@string/broadcast_receiver" />
 
+        <Button
+            android:id="@+id/btnWebsocketChat"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/chat_websocket" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

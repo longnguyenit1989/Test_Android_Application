@@ -24,6 +24,7 @@ import com.example.testapplication.ui.recycleviewmultilevel.RecycleViewMultiLeve
 import com.example.testapplication.ui.recycleviewswipe.RecycleViewSwipeActivity
 import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
 import com.example.testapplication.ui.searchtag.SearchTagActivity
+import com.example.testapplication.ui.websocketchat.WebSocketChatActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
     companion object {
@@ -125,6 +126,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnBroadcastReceiver.setOnClickListener {
                 startActivity(BroadcastReceiverActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnWebsocketChat.setOnClickListener {
+                startActivity(WebSocketChatActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

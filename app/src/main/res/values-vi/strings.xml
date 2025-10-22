@@ -128,4 +128,10 @@
     <string name="back_to_broadcast_receiver_screen">Về màn hình Broadcast Receiver</string>
     <string name="back_to_main">Về màn hình Main</string>
     <string name="go_to_a">Đến màn hình A</string>
+
+    <string name="send">Gửi</string>
+    <string name="input_message">Nhập tin nhắn</string>
+    <string name="connect_websocket_open">Kết nối websocket mở</string>
+    <string name="error">Lỗi</string>
+    <string name="chat_websocket">Nhắn tin websocket</string>
 </resources>

@@ -21,8 +21,8 @@ class DownloadForegroundService : Service() {
     companion object {
         const val EXTRA_URL = "extra_url"
         const val EXTRA_FILE_PATH = "extra_file_path"
-        const val ACTION_DOWNLOAD_COMPLETE = "com.example.downloadservice.DOWNLOAD_COMPLETE"
-        const val ACTION_DOWNLOAD_PROGRESS = "com.example.downloadservice.DOWNLOAD_PROGRESS"
+        const val ACTION_DOWNLOAD_COMPLETE = "action_download_complete"
+        const val ACTION_DOWNLOAD_PROGRESS = "action_download_progress"
         const val KEY_PROGRESS = "key_progress"
         private const val CHANNEL_ID = "download_channel"
         private const val NOTIF_ID = 1
