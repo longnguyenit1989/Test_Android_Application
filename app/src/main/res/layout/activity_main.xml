@@ -131,6 +131,12 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="@string/tick_tock_demo" />
 
+        <Button
+            android:id="@+id/btnFaceBook"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/facebook_demo" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

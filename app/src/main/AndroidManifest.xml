@@ -89,6 +89,10 @@
 
         <activity android:name=".ui.tiktok.TikTokActivity"/>
 
+        <activity android:name=".ui.facebook.FaceBookActivity"/>
+
+        <activity android:name=".ui.facebook.PostDetailActivity"/>
+
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.MyUCrop"

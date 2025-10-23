@@ -136,5 +136,7 @@
     <string name="error">Lỗi</string>
     <string name="chat_websocket">Nhắn tin websocket</string>
 
-    <string name="tick_tock_demo">Tick tock demo</string>
+    <string name="tick_tock_demo">Tick tock thử nghiệm</string>
+
+    <string name="facebook_demo">Facebook thử nghiệm</string>
 </resources>

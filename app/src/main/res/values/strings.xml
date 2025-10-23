@@ -134,5 +134,7 @@
     <string name="error">Error</string>
     <string name="chat_websocket">Chat websocket</string>
 
-    <string name="tick_tock_demo">Tick tock chạy thử</string>
+    <string name="tick_tock_demo">Tick tock demo</string>
+
+    <string name="facebook_demo">Facebook demo</string>
 </resources>

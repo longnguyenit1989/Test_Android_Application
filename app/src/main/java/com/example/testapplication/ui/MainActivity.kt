@@ -16,6 +16,7 @@ import com.example.testapplication.ui.chooseandcropimage.ChooseAndCropImageActiv
 import com.example.testapplication.ui.circle.CircleActivity
 import com.example.testapplication.ui.downloadimage.DownloadImageActivity
 import com.example.testapplication.ui.draw.DrawActivity
+import com.example.testapplication.ui.facebook.FaceBookActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.languageselect.LanguageSelectActivity
 import com.example.testapplication.ui.map.MapActivity
@@ -140,6 +141,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnTikTok.setOnClickListener {
                 startActivity(TikTokActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnFaceBook.setOnClickListener {
+                startActivity(FaceBookActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }
