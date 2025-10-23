@@ -137,4 +137,5 @@
     <string name="tick_tock_demo">Tick tock demo</string>
 
     <string name="facebook_demo">Facebook demo</string>
+    <string name="all_post_have_been_loaded">Đã tải hết bài viết</string>
 </resources>

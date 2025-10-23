@@ -139,4 +139,5 @@
     <string name="tick_tock_demo">Tick tock thử nghiệm</string>
 
     <string name="facebook_demo">Facebook thử nghiệm</string>
+    <string name="all_post_have_been_loaded">All post have been loaded</string>
 </resources>
