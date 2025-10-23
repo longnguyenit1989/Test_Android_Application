@@ -135,4 +135,6 @@
     <string name="connect_websocket_open">Kết nối websocket mở</string>
     <string name="error">Lỗi</string>
     <string name="chat_websocket">Nhắn tin websocket</string>
+
+    <string name="tick_tock_demo">Tick tock demo</string>
 </resources>

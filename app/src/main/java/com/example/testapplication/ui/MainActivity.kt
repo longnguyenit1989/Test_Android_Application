@@ -25,6 +25,7 @@ import com.example.testapplication.ui.recycleviewmultilevel.RecycleViewMultiLeve
 import com.example.testapplication.ui.recycleviewswipe.RecycleViewSwipeActivity
 import com.example.testapplication.ui.recycleviewtouch.RecycleViewTouchActivity
 import com.example.testapplication.ui.searchtag.SearchTagActivity
+import com.example.testapplication.ui.tiktok.TikTokActivity
 import com.example.testapplication.ui.websocketchat.WebSocketChatActivity
 
 class MainActivity : BaseActivity<ActivityMainBinding>() {
@@ -135,6 +136,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnAnalogClock.setOnClickListener {
                 startActivity(AnalogClockActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnTikTok.setOnClickListener {
+                startActivity(TikTokActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

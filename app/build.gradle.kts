@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.securityCrypto)
     implementation(libs.okhttp)
     implementation(libs.okhttp.logging.interceptor)
+    implementation(libs.youtube.player)
 
 
     testImplementation(libs.junit)

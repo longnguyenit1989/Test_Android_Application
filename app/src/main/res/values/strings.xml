@@ -133,4 +133,6 @@
     <string name="connect_websocket_open">Connect websocket open</string>
     <string name="error">Error</string>
     <string name="chat_websocket">Chat websocket</string>
+
+    <string name="tick_tock_demo">Tick tock chạy thử</string>
 </resources>

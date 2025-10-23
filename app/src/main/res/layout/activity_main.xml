@@ -125,6 +125,12 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="@string/chat_websocket" />
 
+        <Button
+            android:id="@+id/btnTikTok"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/tick_tock_demo" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

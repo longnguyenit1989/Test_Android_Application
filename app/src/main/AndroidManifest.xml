@@ -87,6 +87,8 @@
 
         <activity android:name=".ui.analogclockview.AnalogClockActivity"/>
 
+        <activity android:name=".ui.tiktok.TikTokActivity"/>
+
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.MyUCrop"

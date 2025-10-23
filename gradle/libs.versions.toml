@@ -17,6 +17,7 @@ ucrop = "2.2.10"
 biometric = "1.1.0"
 securityCrypto = "1.1.0"
 okhttp = "5.0.0"
+youtubeplayer = "13.0.0"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -36,6 +37,7 @@ biometric = {group = "androidx.biometric", name = "biometric", version.ref = "bi
 securityCrypto = {group = "androidx.security", name = "security-crypto", version.ref = "securityCrypto"}
 okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+youtube-player = { group = "com.pierfrancescosoffritti.androidyoutubeplayer", name = "core", version.ref = "youtubeplayer" }
 
 
 
