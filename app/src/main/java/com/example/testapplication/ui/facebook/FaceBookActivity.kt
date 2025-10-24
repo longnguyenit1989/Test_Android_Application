@@ -1,21 +1,27 @@
 package com.example.testapplication.ui.facebook
 
 import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.view.animation.DecelerateInterpolator
+import android.view.animation.LinearInterpolator
 import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.example.testapplication.R
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityFacebookBinding
 import com.example.testapplication.extension.beGone
 import com.example.testapplication.extension.beVisible
+import com.example.testapplication.model.Post
 import com.example.testapplication.model.samplePosts
 import com.example.testapplication.model.samplePosts1
 import com.example.testapplication.model.samplePosts2
@@ -62,14 +68,55 @@ class FaceBookActivity : BaseActivity<ActivityFacebookBinding>() {
                     super.onScrolled(recyclerView, dx, dy)
                     if (dy <= 0) return  // just run when scroll
 
+//                val offset = recyclerView.computeVerticalScrollOffset() // number of pixels you scrolled down
+//                val extent = recyclerView.computeVerticalScrollExtent() // current display height
+//                val range = recyclerView.computeVerticalScrollRange() // total scrollable content height
+//                if (offset + extent >= range - 200) { // 200px from bottom up
+//                    loadMorePosts()
+//                }
+
                     val layoutManager = recyclerView.layoutManager as LinearLayoutManager
                     val lastVisible = layoutManager.findLastVisibleItemPosition()
-
                     if (lastVisible == adapter.itemCount - 1) {
                         loadMorePosts()
                     }
                 }
             })
+
+            // hide default swipeRefresh
+            swipeRefresh.setColorSchemeColors(Color.TRANSPARENT)
+            swipeRefresh.setProgressBackgroundColorSchemeColor(Color.TRANSPARENT)
+            swipeRefresh.setProgressViewOffset(false, -200, -200) // push default drawable out of screen
+
+            swipeRefresh.setOnRefreshListener {
+                handleCustomRefresh()
+
+                hasMoreData = true
+                isLoading = false
+                loadStep = 0
+                adapter.updatePosts(mutableListOf())
+                currentList = samplePosts.toMutableList()
+                adapter.updatePosts(currentList)
+            }
+        }
+    }
+
+    private fun handleCustomRefresh() {
+        binding.apply {
+            imgCustomRefresh.beVisible()
+
+            val rotation = ObjectAnimator.ofFloat(imgCustomRefresh, View.ROTATION, 0f, 360f)
+            rotation.duration = 700
+            rotation.repeatCount = ValueAnimator.INFINITE
+            rotation.interpolator = LinearInterpolator()
+            rotation.start()
+
+            lifecycleScope.launch {
+                delay(500)
+                swipeRefresh.isRefreshing = false
+                rotation.cancel()
+                imgCustomRefresh.beGone()
+            }
         }
     }
 
@@ -121,4 +168,5 @@ class FaceBookActivity : BaseActivity<ActivityFacebookBinding>() {
         }
     }
 }
+
 
