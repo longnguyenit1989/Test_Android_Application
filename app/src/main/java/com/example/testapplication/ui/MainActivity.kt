@@ -19,6 +19,7 @@ import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.facebook.FaceBookActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.languageselect.LanguageSelectActivity
+import com.example.testapplication.ui.luckywheel.LuckyWheelActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
 import com.example.testapplication.ui.portraitandlandscape.PortraitAndLandscapeActivity
@@ -145,6 +146,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnFaceBook.setOnClickListener {
                 startActivity(FaceBookActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnLuckyWheel.setOnClickListener {
+                startActivity(LuckyWheelActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

@@ -137,6 +137,12 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="@string/facebook_demo" />
 
+        <Button
+            android:id="@+id/btnLuckyWheel"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="wheel" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

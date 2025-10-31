@@ -15,13 +15,11 @@ import android.widget.Toast
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import com.example.testapplication.R
 import com.example.testapplication.base.BaseActivity
 import com.example.testapplication.databinding.ActivityFacebookBinding
 import com.example.testapplication.extension.beGone
 import com.example.testapplication.extension.beVisible
-import com.example.testapplication.model.Post
 import com.example.testapplication.model.samplePosts
 import com.example.testapplication.model.samplePosts1
 import com.example.testapplication.model.samplePosts2

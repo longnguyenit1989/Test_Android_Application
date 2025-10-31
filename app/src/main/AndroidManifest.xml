@@ -93,6 +93,8 @@
 
         <activity android:name=".ui.facebook.PostDetailActivity"/>
 
+        <activity android:name=".ui.luckywheel.LuckyWheelActivity"/>
+
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"
             android:theme="@style/Theme.MyUCrop"
