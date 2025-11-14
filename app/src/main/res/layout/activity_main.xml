@@ -141,7 +141,13 @@
             android:id="@+id/btnLuckyWheel"
             style="@style/button_default"
             android:layout_marginTop="@dimen/small_margin"
-            android:text="wheel" />
+            android:text="@string/lucky_wheel" />
+
+        <Button
+            android:id="@+id/btnListLibrary"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/list_library" />
 
     </LinearLayout>
 

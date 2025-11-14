@@ -139,9 +139,13 @@
     <string name="tick_tock_demo">Tick tock thử nghiệm</string>
 
     <string name="facebook_demo">Facebook thử nghiệm</string>
-    <string name="all_post_have_been_loaded">All post have been loaded</string>
+    <string name="all_post_have_been_loaded">Đã tải hết bài viết</string>
 
     <string name="input">Nhập</string>
-    <string name="enter_your_choices_separated_by_commas">Enter your choices, separated by space</string>
+    <string name="enter_your_choices_separated_by_commas">Nhập các lựa chọn, cách nhau bằng dấu cách</string>
     <string name="result">Kết quả</string>
+
+    <string name="lucky_wheel">Vòng quay may mắn</string>
+
+    <string name="list_library">Danh sách thư viện</string>
 </resources>

@@ -24,4 +24,8 @@
     <color name="clock_text">#212121</color>
     <color name="clock_gradient_center">#F5F5F5</color>
     <color name="clock_gradient_edge">#E0E0E0</color>
+
+    <color name="text_number_gray_color_standard">#333333</color>
+    <color name="error_text_color_standard">#FF0D0D</color>
+    <color name="line_gray_light_color_standard">#F0F0F0</color>
 </resources>

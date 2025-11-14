@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
     id("kotlin-parcelize")
+    id("com.mikepenz.aboutlibraries.plugin") version "12.2.4"
 }
 
 android {
@@ -55,7 +56,9 @@ dependencies {
     implementation(libs.okhttp.logging.interceptor)
     implementation(libs.youtube.player)
     implementation(libs.androidx.swiperefreshlayout)
+    implementation(libs.aboutlibraries)
 
+    implementation(libs.shipbook)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

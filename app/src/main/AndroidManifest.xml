@@ -10,6 +10,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
     <application
+        android:name=".ui.MyApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -94,6 +95,8 @@
         <activity android:name=".ui.facebook.PostDetailActivity"/>
 
         <activity android:name=".ui.luckywheel.LuckyWheelActivity"/>
+
+        <activity android:name=".ui.licenselist.LicenseListActivity"/>
 
         <activity
             android:name="com.yalantis.ucrop.UCropActivity"

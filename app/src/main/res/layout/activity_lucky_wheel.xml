@@ -1,5 +1,6 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/x_light_grey"
@@ -54,5 +55,12 @@
         app:layout_constraintBottom_toBottomOf="@id/wheelView"
         app:layout_constraintStart_toEndOf="@id/wheelView"
         app:layout_constraintTop_toTopOf="@id/wheelView" />
+
+    <com.example.testapplication.ui.luckywheel.ConfettiView
+        android:id="@+id/confettiView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipChildren="false"
+        android:clipToPadding="false"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,5 @@
 package com.example.testapplication.ui
 
-import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
@@ -19,6 +18,7 @@ import com.example.testapplication.ui.draw.DrawActivity
 import com.example.testapplication.ui.facebook.FaceBookActivity
 import com.example.testapplication.ui.filterimage.FilterImageActivity
 import com.example.testapplication.ui.languageselect.LanguageSelectActivity
+import com.example.testapplication.ui.licenselist.LicenseListActivity
 import com.example.testapplication.ui.luckywheel.LuckyWheelActivity
 import com.example.testapplication.ui.map.MapActivity
 import com.example.testapplication.ui.movebutton.MoveButtonActivity
@@ -150,6 +150,10 @@ class MainActivity : BaseActivity<ActivityMainBinding>() {
 
             btnLuckyWheel.setOnClickListener {
                 startActivity(LuckyWheelActivity.Companion.newIntent(this@MainActivity))
+            }
+
+            btnListLibrary.setOnClickListener {
+                startActivity(LicenseListActivity.Companion.newIntent(this@MainActivity))
             }
         }
     }

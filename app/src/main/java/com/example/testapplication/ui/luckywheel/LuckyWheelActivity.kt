@@ -81,7 +81,13 @@ class LuckyWheelActivity : BaseActivity<ActivityLuckyWheelBinding>() {
 
         animator.addListener(onEnd = {
             binding.wheelView.rotation = angleCenter
-            showResultDialog(randomIndex)
+            val cx = binding.wheelView.x + binding.wheelView.width / 2
+            val cy = binding.wheelView.y + binding.wheelView.height / 2
+            binding.confettiView.launchFirework(cx, cy, 250)
+            binding.confettiView.postDelayed({
+                showResultDialog(randomIndex)
+            }, 800)
+
             isSpinning = false
             binding.wheelView.isClickable = true
         })
