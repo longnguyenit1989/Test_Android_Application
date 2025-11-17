@@ -69,8 +69,11 @@ class BroadcastReceiverActivity : BaseActivity<ActivityBroadcastReceiverBinding>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setUpWifi()
-        binding.btnGoToA.setOnClickListener {
-            startActivity(ScreenAActivity.Companion.newIntent(this@BroadcastReceiverActivity))
+        binding.apply {
+            btnGoToA.setOnClickListener {
+                startActivity(ScreenAActivity.Companion.newIntent(this@BroadcastReceiverActivity))
+            }
+            waveView.startWave()
         }
     }
 
