@@ -1,26 +1,24 @@
 package com.example.testapplication.ui.recycleviewtouch
 
 import android.annotation.SuppressLint
-import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.testapplication.databinding.ItemViewTouchBinding
+import com.example.testapplication.databinding.ItemViewTouchHorizontalBinding
 import java.util.Collections
+import android.view.LayoutInflater
 
-class RecycleViewTouchAdapter(
+class RecycleViewTouchHorizontalAdapter(
     private val items: MutableList<String>,
-    private val dragStartListener: (RecyclerView.ViewHolder) -> Unit
-) : RecyclerView.Adapter<RecycleViewTouchAdapter.ViewHolder>() {
+    private val dragStart: (RecyclerView.ViewHolder) -> Unit
+) : RecyclerView.Adapter<RecycleViewTouchHorizontalAdapter.ViewHolder>() {
 
-    inner class ViewHolder(val binding: ItemViewTouchBinding) :
+    inner class ViewHolder(val binding: ItemViewTouchHorizontalBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding = ItemViewTouchBinding.inflate(
-            LayoutInflater.from(parent.context),
-            parent,
-            false
+        val binding = ItemViewTouchHorizontalBinding.inflate(
+            LayoutInflater.from(parent.context), parent, false
         )
         return ViewHolder(binding)
     }
@@ -32,23 +30,16 @@ class RecycleViewTouchAdapter(
         holder.binding.textView.text = items[position]
 
         holder.binding.dragHandle.setOnTouchListener { _, event ->
-            if (event.actionMasked == MotionEvent.ACTION_DOWN) {
-                dragStartListener(holder)
+            if (event.action == MotionEvent.ACTION_DOWN) {
+                dragStart(holder)
             }
             false
         }
     }
 
     fun onItemMove(from: Int, to: Int) {
-        if (from < to) {
-            for (i in from until to) {
-                Collections.swap(items, i, i + 1)
-            }
-        } else {
-            for (i in from downTo to + 1) {
-                Collections.swap(items, i, i - 1)
-            }
-        }
+        Collections.swap(items, from, to)
         notifyItemMoved(from, to)
     }
 }
+
