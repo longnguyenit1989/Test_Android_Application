@@ -35,7 +35,6 @@ class MonthAdapter(
 
         val redColor = context.getColor(R.color.red)
         val blackColor = context.getColor(R.color.black)
-        val blueColor = context.getColor(R.color.blue)
         val violetColor = context.getColor(R.color.violet)
         val whiteColor = context.getColor(R.color.white)
 
@@ -45,7 +44,7 @@ class MonthAdapter(
         when {
             date == LocalDate.now() -> {
                 holder.binding.viewTodayCircle.beVisible()
-                holder.binding.tvDayNumber.setTextColor(blueColor)
+                holder.binding.tvDayNumber.setTextColor(whiteColor)
             }
 
             date.dayOfWeek == DayOfWeek.SUNDAY -> {

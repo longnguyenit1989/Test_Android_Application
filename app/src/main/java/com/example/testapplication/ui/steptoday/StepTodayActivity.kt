@@ -40,6 +40,7 @@ class StepTodayActivity : BaseActivity<ActivityStepTodayBinding>(), SensorEventL
     private val keyDate = "date"
     private val keySteps = "stepsToday"
     private val hourlySteps = mutableMapOf<Int, Int>()
+    private var isFirstDetect = true
 
     companion object {
         fun newIntent(context: Context): Intent {
@@ -77,6 +78,7 @@ class StepTodayActivity : BaseActivity<ActivityStepTodayBinding>(), SensorEventL
 
     override fun onResume() {
         super.onResume()
+        isFirstDetect = true
         stepDetector?.also {
             sensorManager.registerListener(this, it, SensorManager.SENSOR_DELAY_UI)
         }
@@ -116,7 +118,12 @@ class StepTodayActivity : BaseActivity<ActivityStepTodayBinding>(), SensorEventL
 
     override fun onSensorChanged(event: SensorEvent?) {
         event?.let {
-            val stepIncrement = if (it.values[0] < 1f) 1 else it.values[0].toInt()
+            if (isFirstDetect) {
+                isFirstDetect = false
+                return
+            }
+
+            val stepIncrement = 1
             stepsToday += stepIncrement
 
             val hour = Calendar.getInstance().get(Calendar.HOUR_OF_DAY)
@@ -128,6 +135,7 @@ class StepTodayActivity : BaseActivity<ActivityStepTodayBinding>(), SensorEventL
             updateUI()
         }
     }
+
 
     private fun updateChart() {
         val entries = mutableListOf<BarEntry>()
