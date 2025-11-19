@@ -146,4 +146,10 @@
     <string name="lucky_wheel">Lucky wheel</string>
 
     <string name="list_library">List library</string>
+
+    <string name="step_counter">Steps counter</string>
+    <string name="steps_today">Steps today</string>
+    <string name="distance">Distance</string>
+    <string name="calories">Calories</string>
+    <string name="steps_per_hour">Steps per hour</string>
 </resources>

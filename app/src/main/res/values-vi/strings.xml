@@ -148,4 +148,10 @@
     <string name="lucky_wheel">Vòng quay may mắn</string>
 
     <string name="list_library">Danh sách thư viện</string>
+
+    <string name="step_counter">Đếm bước chân</string>
+    <string name="steps_today">Số bước ngày hôm nay</string>
+    <string name="distance">Khoảng cách đã đi</string>
+    <string name="calories">Lượng calo tiêu thụ</string>
+    <string name="steps_per_hour">Số bước chân mỗi giờ</string>
 </resources>

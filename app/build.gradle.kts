@@ -57,6 +57,7 @@ dependencies {
     implementation(libs.youtube.player)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.aboutlibraries)
+    implementation(libs.mpandroidchart)
 
     implementation(libs.shipbook)
 

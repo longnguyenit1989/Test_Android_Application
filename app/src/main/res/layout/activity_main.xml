@@ -149,6 +149,12 @@
             android:layout_marginTop="@dimen/small_margin"
             android:text="@string/list_library" />
 
+        <Button
+            android:id="@+id/btnStepCounter"
+            style="@style/button_default"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@string/step_counter" />
+
     </LinearLayout>
 
 </androidx.core.widget.NestedScrollView>

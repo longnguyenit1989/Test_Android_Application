@@ -20,6 +20,7 @@ okhttp = "5.3.0"
 youtubeplayer = "13.0.0"
 swiperefreshlayout = "1.1.0"
 aboutlibraries = "12.2.4"
+mpandroidchart = "3.1.0"
 
 shipbook = "1.8.3"
 
@@ -44,6 +45,7 @@ okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-i
 youtube-player = { group = "com.pierfrancescosoffritti.androidyoutubeplayer", name = "core", version.ref = "youtubeplayer" }
 androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
 aboutlibraries = { group = "com.mikepenz", name = "aboutlibraries", version.ref = "aboutlibraries" }
+mpandroidchart = { group = "com.github.PhilJay", name = "MPAndroidChart", version.ref = "mpandroidchart" }
 
 shipbook = { group = "io.shipbook", name = "shipbooksdk", version.ref = "shipbook" }
 
